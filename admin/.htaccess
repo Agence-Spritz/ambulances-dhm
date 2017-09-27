@@ -1,0 +1,10 @@
+#AuthUserFile /home/rmxtgcomtk/www/bois-chauffage-mouscron.be/admin/.htpasswd
+#AuthGroupFile /dev/null
+#AuthName "Acces Restreint"
+#AuthType Basic
+#<Limit GET POST>
+#require user sullymaz admin
+#</Limit>
+
+DirectoryIndex produit.php
+
