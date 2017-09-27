@@ -1,0 +1,21 @@
+<?php 
+// VARIABLES
+   $host="rmxtgcomtk1.mysql.db";
+   $userweb = "rmxtgcomtk1";
+   $passweb = "57yVCa5d3kyU";
+   $baseweb = "rmxtgcomtk1";
+   $baselocal = "rmxtgcomtk1";
+   $table_prefix = "mssmouscron";
+
+   $prixtitre=9;
+   $prixtitre2=8.1;
+
+// CONNECTION LOCALE
+if (( substr($_SERVER['HTTP_HOST'],0,9) == "127.0.0.1" ) or ( substr($_SERVER['HTTP_HOST'],0,9) == "localhost" ))
+{	$link = mysqli_connect("localhost","root","","$baselocal") or die("Error " . mysqli_error($link)); 
+    	//print ("En developpement");
+} else {
+	$link = mysqli_connect("$host","$userweb","$passweb","$baseweb") or die("Error " . mysqli_error($link)); 
+    	//print ("sur le web");
+}
+?>
