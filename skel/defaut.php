@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en-US">
+<html dir="ltr" lang="fr-FR">
 
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -66,7 +66,7 @@
 <body class="stretched no-transition"> <!-- no-transition Masque les transition de page lente !-->
 	<div id="wrapper" class="clearfix">
 		
-		<?php if ($pg=="accueil-menage-repassage-couture-mouscron" && $services!=1){ ?>
+		<?php if ($pg=="accueil-ambulances-dhm-mouscron"){ ?>
 		<section id="slider" class="slider-parallax revslider-wrap full-screen clearfix">
 			
             <!--
@@ -96,9 +96,9 @@
 						$Qmd=mysqli_query($link, "SELECT ID, titre,rub,texte,texte2 FROM ".$table_prefix."_pages WHERE page='diapo' AND masquer!=1 ORDER BY dbu DESC LIMIT 0,5");
 						while (list($IDd,$titred,$liend,$texted,$introd) = mysqli_fetch_array($Qmd)){
 						?>    <!-- SLIDE  -->
-						<li class="dark" data-transition="fade" data-slotamount="1" data-masterspeed="1500" data-thumb="images/pages-femme-menage-mouscron-repassage-herseaux/<?=$IDd?>.jpg" data-delay="7000"  data-saveperformance="off" data-title="<?=$titred?>">
+						<li class="dark" data-transition="fade" data-slotamount="1" data-masterspeed="1500" data-thumb="images/slider/<?=$IDd?>.jpg" data-delay="7000"  data-saveperformance="off" data-title="<?=$titred?>">
 							<!-- MAIN IMAGE -->
-							<img src="images/pages-femme-menage-mouscron-repassage-herseaux/<?=$IDd?>.jpg" title="MSS mouscron" alt="<?=$titre?>. <?=$description?>. <?=$keywords?>."  data-bgposition="left center" data-kenburns="on" data-duration="8000" data-ease="Linear.easeNone" data-scalestart="130" data-scaleend="100" data-bgpositionend="right center">
+							<img src="images/slider/<?=$IDd?>.jpg" title="Ambulances DHM mouscron" alt="<?=$titre?>. <?=$description?>. <?=$keywords?>."  data-bgposition="left center" data-kenburns="on" data-duration="8000" data-ease="Linear.easeNone" data-scalestart="130" data-scaleend="100" data-bgpositionend="right center">
 							<!-- LAYERS -->
 
 							<!-- LAYER NR. 2 -->
@@ -188,27 +188,21 @@
 					<nav id="primary-menu" class="style-5">
 
 						<ul class="norightborder norightpadding norightmargin">
-							<li class="<?=($pg=='accueil-menage-repassage-couture-mouscron')?('current'):('')?>"><a href="accueil-menage-repassage-couture-mouscron.php"><div><i class="icon-home2" ></i> Accueil</div></a></li>		
-							<li class="<?=($pg=='page' && $id>=3 && $id<=5)?('current'):('')?>"><a href="accueil-menage-repassage-couture-mouscron.php?services=1"><div><i class="icon-home" ></i> Services</div></a>
+							<li class="<?=($pg=='accueil-ambulances-dhm-mouscron')?('current'):('')?>"><a href="accueil-ambulances-dhm-mouscron.php"><div><i class="icon-home2" ></i> DHM</div></a></li>		
+							<li class="<?=($pg=='page' && $id>=3 && $id<=5)?('current'):('')?>"><a href="prise-en-charge-transport-ambulance--3--page"><div><i class="icon-home" ></i> Prise en charge</div></a>
 								<ul>
-									<li><a href="femme-de-menage-mouscron-titres-services--3--page"><div>Ménage</div></a></li>
-									<li><a href="repassage-chemise-pantallon-herseaux-titres-services--4--page"><div>Repassage</div></a></li>
-									<li><a href="couturiere-reparation-vetement-dottignies--5--page"><div>Petit travaux de couture</div></a></li>
+									<li><a href="prise-en-charge-transport-hopital--3--page"><div>Pourquoi / pour qui ?</div></a></li>
+									<li><a href="prise-en-charge-transport-medicalise--4--page"><div>Transport médicalisé</div></a></li>
+									<li><a href="prise-en-charge-transport-non-medicalise--5--page"><div>Transport non médicalisée</div></a></li>
+									<li><a href="prise-en-charge-transport-vsl--5--page"><div>Transport VSL</div></a></li>
+									<li><a href="prise-en-charge-hospitalisation-mouscron--5--page"><div>Hospitalisation & sortie</div></a></li>
+									<li><a href="prise-en-charge-forfait-tarif--5--page"><div>Forfaits et tarifs</div></a></li>
 								</ul>
 							</li>
-							<li class="<?=($pg=='blog')?('current'):('')?>"><a href="titres-services-mouscron-herseaux-dottignies--blog"><div><i class="icon-comment"></i>Blog</div></a>
-								<ul>
-                                	<?php 
-									$Qmb=mysqli_query($link, "SELECT ID, titre FROM ".$table_prefix."_pages WHERE page='blog' AND masquer!=1 ORDER BY dbu DESC LIMIT 0,5 ");
-									while (list($IDmb,$titremb)=mysqli_fetch_array($Qmb)){
-									?>
-									<li><a href="<?=rewrite($titremb)?>--<?=$IDmb?>--blog"><div><?=cleanCut($titremb,80,'...')?></div></a></li>
-                                    <?php } ?>
-								</ul>
-                            </li>
-							<li class="<?=($pg=='photo')?('current'):('')?>"><a href="titres-services-mouscron-luingne-herseaux-dottignies--photo"><div><i class="icon-camera"></i>Photos</div></a></li>
-							<li class="<?=($pg=='job')?('current'):('')?>"><a href="job-recrutement-emploi-mouscron-non-qualifie--6--page"><div><i class="icon-users"></i>Job?</div></a></li>
-                            <li class="<?=($pg=='lien')?('current'):('')?>"><a href="trouver-un-travail-a-mouscron--lien"><div><i class="icon-link"></i>Liens</div></a></li>
+							<li class="<?=($pg=='equipe')?('current'):('')?>"><a href="presentation-equipe-ambulance-mouscron-luingne-herseaux-dottignies--equipe"><div><i class="icon-camera"></i>Equipe</div></a></li>
+							<li class="<?=($pg=='reserver')?('current'):('')?>"><a href="reservation-transport-hopital-mouscron-ambulance--page"><div><i class="icon-camera"></i>Réserver</div></a></li>
+							<li class="<?=($pg=='qualite')?('current'):('')?>"><a href="qualite-service-transport-hopital--6--page"><div><i class="icon-users"></i>Qualité</div></a></li>
+                            <li class="<?=($pg=='actu')?('current'):('')?>"><a href="actualites-ambulances-dhm--blog"><div><i class="icon-link"></i>Actu</div></a></li>
 							<li class="<?=($pg=='contact')?('current'):('')?>"><a href="contacter-bonne-femme-de-menage-serieuse--contact"><div><i class="icon-envelope"></i>Contact</div></a></li>
 						</ul>
 
@@ -243,12 +237,9 @@
                         <div class="fancy-title title-border">
                             <h4>Coordonn&eacute;es</h4>
                         </div>
-                        <p>Boulevard industriel, 86 - Rond-point du centre commercial 'Les Dauphins', 7700 Mouscron BELGIQUE</p>
+                        <p>Rue du nouveau monde- 106, 7700 Mouscron BELGIQUE</p>
                         <ul class="iconlist nobottommargin">
-                            <li><i class="icon-phone color"></i> <strong><a href="tel=+3256335110">Tel:</strong> 056 33 51 10</a></li>
-                            <li><i class="icon-print"></i> <strong>Fax:</strong> 056 33 18 10</li>
-                            <li><i class="icon-certificate"></i> <strong>N° agrément TS:</strong> 03092</li>
-                            <li><i class="icon-briefcase"></i> <strong>N° entreprise:</strong> 0895 711 955</li>
+                            <li><i class="icon-phone color"></i> <strong><a href="tel=+3256345411">Tel:</strong> +32 56 34 54 11</a></li>
                         </ul>
                     </div>
                 
@@ -263,13 +254,13 @@
 							$Qmb=mysqli_query($link, "SELECT ID, titre FROM ".$table_prefix."_pages WHERE page='photo' AND masquer!=1 ORDER BY rand() DESC LIMIT 0,10 "); $delayP=0; $n=0;
 							while (list($IDp,$titrep)=mysqli_fetch_array($Qmb)){
 								$delayP=$delayP+100;
-								list($width, $height, $type) = getimagesize("images/pages-femme-menage-mouscron-repassage-herseaux/".$IDp."-v.jpg");
+								list($width, $height, $type) = getimagesize("images/pages-ambulance-mouscron-transport-hopital/".$IDp."-v.jpg");
 								if ($width>$height) { $n++;
 									if ($n<=6) {
 							?>
-                                        <a href="images/pages-femme-menage-mouscron-repassage-herseaux/<?=$IDp?>.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/pages-femme-menage-mouscron-repassage-herseaux/<?=$IDp?>-v.jpg" alt="<?=$titrep?>" data-animate="zoomIn" data-delay="<?=$delayP?>" ></a>
+                                        <a href="images/pages-ambulance-mouscron-transport-hopital/<?=$IDp?>.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/pages-ambulance-mouscron-transport-hopital/<?=$IDp?>-v.jpg" alt="<?=$titrep?>" data-animate="zoomIn" data-delay="<?=$delayP?>" ></a>
                             <?php }}} ?>
-                            <a href="titres-services-mouscron-luingne-herseaux-dottignies--photo"><img class="image_fade" src="images/photo.jpg" data-animate="zoomIn" data-delay="800" style="height:90px"></a>
+                            <a href="titres-ambulances-mouscron-luingne-herseaux-dottignies--photo"><img class="image_fade" src="images/photo.jpg" data-animate="zoomIn" data-delay="800" style="height:90px"></a>
                         </div>
                     </div>
                 </div>
@@ -286,7 +277,7 @@
 					<div class="col_half">
 						&copy; <?=date("Y")?> <?=$nom_titre_meta?>, <a href="http://www.creationdesites.net" target="_blank" title="Cr&eacute;ation de site Mouscron">Création de site Remix Web <span class="creationdesite"></span></a>
 						<br />
-                        <div class="copyright-links"><a href="mentions-mouscron-solidarite-services--1--page">Mentions</a></div>
+                        <div class="copyright-links"><a href="mentions-mouscron-ambulances-dhm--1--page">Mentions</a></div>
 					</div>
 
 					<div class="col_half col_last tright">
@@ -315,7 +306,6 @@
 								<i class="icon-linkedin"></i>
 								<i class="icon-linkedin"></i>
 							</a>
-							<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FMouscron-Solidarit%25C3%25A9-Services-125248857502208&width=86&layout=button_count&action=like&size=small&show_faces=true&share=false&height=21&appId=235382260148315" width="100" height="21" style="margin-top:5px; border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 						</div>
 
 						<div class="clear"></div>
@@ -397,7 +387,7 @@
     <?php } ?>
     
     <?php
-    if ($pg=="accueil-menage-repassage-couture-mouscron") {
+    if ($pg=="accueil-ambulances-dhm-mouscron") {
 	?>
 	<script type="text/javascript">
 
@@ -434,7 +424,7 @@
                     },
                     thumbnails: {
                         style: "hesperiden",
-                        enable: true,
+                        enable: false,
                         width: 100,
                         height: 50,
                         min_width: 100,
@@ -442,7 +432,7 @@
                         wrapper_color: "#ffffff",
                         wrapper_opacity: "0.5",
                         tmp: '<span class="tp-thumb-image"></span><span class="tp-thumb-title">{{title}}</span>',
-                        visibleAmount: 5,
+                        visibleAmount: 0,
                         hide_onmobile: false,
                         hide_onleave: false,
                         direction: "horizontal",
