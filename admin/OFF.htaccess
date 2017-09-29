@@ -6,5 +6,5 @@
 #require user sullymaz admin
 #</Limit>
 
-DirectoryIndex pages.php
+DirectoryIndex page.php
 
