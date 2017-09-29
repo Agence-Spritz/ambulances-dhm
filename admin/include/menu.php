@@ -13,7 +13,7 @@ include ("include/cookieliendirect.txt") ;
 <link href="include//font-awesome.min.css" rel="stylesheet" type="text/css">
 
 <!-- CK EDITOR -->
-<script type="text/javascript" src="../ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 </head>
 
 <?
