@@ -25,7 +25,7 @@
 						?>
             			<article class="portfolio-item <?=rewrite($rubp)?>">
 							<div class="portfolio-image">
-									<?php if (file_exists("images/pages-femme-menage-mouscron-repassage-herseaux/".$IDp.".jpg")) {?><img src="images/pages-femme-menage-mouscron-repassage-herseaux/<?=$IDp?>.jpg" title="<?=$titrep?>, <?=$rubp?>" alt="<?=$titre?> <?=$keywords?>"><?php } ?>
+									<?php if (file_exists("images/pages-ambulance-mouscron-transport-hopital/".$IDp.".jpg")) {?><img src="images/pages-ambulance-mouscron-transport-hopital/<?=$IDp?>.jpg" title="<?=$titrep?>, <?=$rubp?>" alt="<?=$titre?> <?=$keywords?>"><?php } ?>
 								<div class="portfolio-overlay">
 									<a href="<?=$lienp?>" target="_blank" class="left-icon" ><i class="icon-link"></i></a>
 									<a href="<?=$lienp?>" target="_blank" class="right-icon" ><i class="icon-arrow-right"></i></a>

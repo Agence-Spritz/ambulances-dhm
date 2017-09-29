@@ -26,10 +26,10 @@
             			<article class="portfolio-item <?=rewrite($rubp)?>">
 							<div class="portfolio-image">
 								<a href="<?=rewrite($rubp)?>-<?=rewrite($rubp)?>--<?=$IDp?>--blog">
-									<?php if (is_file("images/pages-femme-menage-mouscron-repassage-herseaux/".$IDp.".jpg")) {?><img src="images/pages-femme-menage-mouscron-repassage-herseaux/<?=$IDp?>.jpg" title="<?=$titrep?>, <?=$rubp?>" alt="<?=$titre?> <?=$keywords?>"><?php } ?>
+									<?php if (is_file("images/pages-ambulance-mouscron-transport-hopital/".$IDp.".jpg")) {?><img src="images/pages-ambulance-mouscron-transport-hopital/<?=$IDp?>.jpg" title="<?=$titrep?>, <?=$rubp?>" alt="<?=$titre?> <?=$keywords?>"><?php } ?>
 								</a>
 								<div class="portfolio-overlay">
-									<!--<a href="images/pages-femme-menage-mouscron-repassage-herseaux/<?=$IDp?>.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>-->
+									<!--<a href="images/pages-ambulance-mouscron-transport-hopital/<?=$IDp?>.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>-->
 									<a href="<?=rewrite($rubp)?>-<?=rewrite($rubp)?>--<?=$IDp?>--blog" class="left-icon"><i class="icon-angle-right"></i></a>
                                     <a href="<?=rewrite($rubp)?>-<?=rewrite($rubp)?>--<?=$IDp?>--blog" class="right-icon"><i class="icon-search"></i></a>
 								</div>
@@ -62,13 +62,13 @@ list($IDb,$dbub,$titreb,$rubb,$texteb)=mysqli_fetch_array(mysqli_query($link,"SE
 									<div class="flexslider">
 										<div class="slider-wrap">
 											<?php // Photo Principale
-											if (is_file("images/pages-femme-menage-mouscron-repassage-herseaux/".$IDb.".jpg")) {?>
-                                            	<div class="slide"><a href="images/pages-femme-menage-mouscron-repassage-herseaux/<?=$IDb?>.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/pages-femme-menage-mouscron-repassage-herseaux/<?=$IDb?>.jpg" alt="<?=$titre?>. <?=$keywords?>. <?=$description?>."></a></div>
+											if (is_file("images/pages-ambulance-mouscron-transport-hopital/".$IDb.".jpg")) {?>
+                                            	<div class="slide"><a href="images/pages-ambulance-mouscron-transport-hopital/<?=$IDb?>.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/pages-ambulance-mouscron-transport-hopital/<?=$IDb?>.jpg" alt="<?=$titre?>. <?=$keywords?>. <?=$description?>."></a></div>
 											<?php } ?>
 											<?php // Photo suivantes
 											for ($a=1; $a<=4; $a++){
-												if (is_file("images/pages-femme-menage-mouscron-repassage-herseaux/".$IDb."-".$a.".jpg")) {?>
-                                            		<div class="slide"><a href="images/pages-femme-menage-mouscron-repassage-herseaux/<?=$IDb?>-<?=$a?>.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/pages-femme-menage-mouscron-repassage-herseaux/<?=$IDb?>-<?=$a?>.jpg" alt="<?=$titre?>. <?=$keywords?>. <?=$description?>."></a></div>
+												if (is_file("images/pages-ambulance-mouscron-transport-hopital/".$IDb."-".$a.".jpg")) {?>
+                                            		<div class="slide"><a href="images/pages-ambulance-mouscron-transport-hopital/<?=$IDb?>-<?=$a?>.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/pages-ambulance-mouscron-transport-hopital/<?=$IDb?>-<?=$a?>.jpg" alt="<?=$titre?>. <?=$keywords?>. <?=$description?>."></a></div>
 											<?php }} ?>	
                                         </div>
 									</div>

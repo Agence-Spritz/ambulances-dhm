@@ -22,8 +22,7 @@
 							</div>
 							<div class="fbox-desc">
 								<h3>Repasser son linge<span class="subtitle">Une vraie corv&eacute;e!</span></h3>
-								<p>Nous vous proposons &eacute;galement un service de repassage en centrale professionnelle. Le principe est simple : vous venez d&eacute;poser votre linge et vous le r&eacute;cup&eacute;rez 48h plus tard.
-</p>
+								<p>Nous vous proposons &eacute;galement un service de repassage en centrale professionnelle. Le principe est simple : vous venez d&eacute;poser votre linge et vous le r&eacute;cup&eacute;rez 48h plus tard.</p>
 							</div>
                             </a>
 						</div>
@@ -56,7 +55,7 @@
 				<div class="section nobg topmargin-lg nobottommargin">
                     <div class="container clearfix">
                         <div class="col_half nobottommargin center">
-                            <img src="images/pages-femme-menage-mouscron-repassage-herseaux/<?=$IDb?>.jpg" alt="<?=$titreb?>. <?=$soustitreb?>" data-animate="fadeInLeft">
+                            <img src="images/pages-ambulance-mouscron-transport-hopital/<?=$IDb?>.jpg" alt="<?=$titreb?>. <?=$soustitreb?>" data-animate="fadeInLeft">
                         </div>
     
                         <div class="col_half nobottommargin col_last">

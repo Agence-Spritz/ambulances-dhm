@@ -42,10 +42,10 @@
             			<article class="portfolio-item <?=rewrite($rubp)?>">
 							<div class="portfolio-image">
 								
-									<?php if (file_exists("images/pages-femme-menage-mouscron-repassage-herseaux/".$IDp.".jpg")) {?><img src="images/pages-femme-menage-mouscron-repassage-herseaux/<?=$IDp?>.jpg" title="<?=$titrep?>, <?=$rubp?>" alt="<?=$titre?> <?=$keywords?>"><?php } ?>
+									<?php if (file_exists("images/pages-ambulance-mouscron-transport-hopital/".$IDp.".jpg")) {?><img src="images/pages-ambulance-mouscron-transport-hopital/<?=$IDp?>.jpg" title="<?=$titrep?>, <?=$rubp?>" alt="<?=$titre?> <?=$keywords?>"><?php } ?>
 								<div class="portfolio-overlay">
-									<a href="images/pages-femme-menage-mouscron-repassage-herseaux/<?=$IDp?>.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-									<a href="images/pages-femme-menage-mouscron-repassage-herseaux/<?=$IDp?>.jpg" class="right-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+									<a href="images/pages-ambulance-mouscron-transport-hopital/<?=$IDp?>.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+									<a href="images/pages-ambulance-mouscron-transport-hopital/<?=$IDp?>.jpg" class="right-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
 								</div>
 							</div>
 							<div class="portfolio-desc">
