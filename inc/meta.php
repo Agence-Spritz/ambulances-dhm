@@ -21,8 +21,8 @@
 	 
 // OPEN GRAPH
 $ogimg='http://'.$_SERVER[HTTP_HOST].dirname($_SERVER["PHP_SELF"]).'images/OpenGraph.jpg';
-$ogtitre='Mss Mouscron';
-$ogdescr='Femme de ménage, repassage, petits travaux de couture';
+$ogtitre='Ambulances DHM';
+$ogdescr='Mouscron Ambulance - Ambulances DHM - Transport de malades à Mouscron';
 
   // METAS SPECIAUX PAGES
   if (is_numeric($id)>0 && $pg=='blog')
