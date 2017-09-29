@@ -2,20 +2,11 @@ ErrorDocument 404 /index.php
 
 RewriteEngine on
 
-RewriteCond %{HTTP_HOST} ^mssmouscron.be$ [NC]
-RewriteRule ^(.*)$ http://www.mssmouscron.be/$1 [QSA,R=301,L]
+RewriteCond %{HTTP_HOST} ^ambulancesdhm.be$ [NC]
+RewriteRule ^(.*)$ http://www.ambulancesdhm.be/$1 [QSA,R=301,L]
 
 ##############################
 RewriteRule ^(.*)--(.*)--(.*)$ 			$3.php?id=$2 [NC,QSA,L]
 RewriteRule ^(.*)--(.*)				$2.php [NC,QSA,L]
 
-Redirect permanent /accueil.php			http://www.mssmouscron.be/accueil-menage-repassage-couture-mouscron.php
-Redirect permanent /services.php		http://www.mssmouscron.be/accueil-menage-repassage-couture-mouscron.php?services=1
-Redirect permanent /comment-ca-marche.php	http://www.mssmouscron.be/repassage-chemise-pantallon-herseaux-titres-services--4--page
-Redirect permanent /titre-services.php		http://www.mssmouscron.be/titres-services-mouscron-herseaux-dottignies--blog
-Redirect permanent /recrutement.php		http://www.mssmouscron.be/job-recrutement-emploi-mouscron-non-qualifie--6--page
-Redirect permanent /album.php			http://www.mssmouscron.be/titres-services-mouscron-luingne-herseaux-dottignies--photo
-Redirect permanent /partenaires.php		http://www.mssmouscron.be/trouver-un-travail-a-mouscron--lien
-Redirect permanent /localisation-plan.php	http://www.mssmouscron.be/contacter-bonne-femme-de-menage-serieuse--contact
-Redirect permanent /mentions_legales.php	http://www.mssmouscron.be/mentions-mouscron-solidarite-services--1--page
 
