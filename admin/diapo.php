@@ -199,6 +199,11 @@ if ( $modif )
 								</div>
 							</div>
 							<div class="clearfix"></div>
+							<div class="col-sm-12 col-md-12 texte-principal">
+			    
+						      <div class="clearfix"></div>
+						      <button type="submit" name="Submit" value="Enregistrer" class="btn btn-default bouton-submit">Enregistrer</button>
+							</div>
 				
 					
 				</form>
@@ -256,7 +261,7 @@ if ( $modif )
 							  	if ($masquer=="1") {$class="normalgrisclair";} else {$class="";}
 							    echo "<tr class='".$class."'>";
 							    echo "<td><a href=\"?modif=$ID&word=$word\"><i class='fa fa-pencil '></i></a></td>";
-							    echo "<td>$ID - $lg</td><td>".$page." <i class='fa fa-angle-right '></i></td><td>".strip_tags($titre)."</td><td>".substr(strip_tags($texte),0,60)."...</td><td>".date_barre($dbu)."</td><td><!--<a href=\"?del=$ID&word=$word\"><i class='fa fa-trash-o '></i></a>--></td>";
+							    echo "<td>$ID - $lg</td><td>".$page." <i class='fa fa-angle-right '></i></td><td>".strip_tags($titre)."</td><td>".substr(strip_tags($texte),0,60)."...</td><td>".date_barre($dbu)."</td><td><a href=\"?del=$ID&word=$word\"><i class='fa fa-trash-o '></i></a></td>";
 							    echo "</tr>";
 							  }
 							 ?>
