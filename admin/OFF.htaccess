@@ -1,4 +1,4 @@
-#AuthUserFile /home/rmxtgcomtk/www/bois-chauffage-mouscron.be/admin/.htpasswd
+#AuthUserFile /home/rmxtgcomtk/www/ambulancesdhm.be.kid-style.be/admin/.htpasswd
 #AuthGroupFile /dev/null
 #AuthName "Acces Restreint"
 #AuthType Basic
@@ -6,5 +6,5 @@
 #require user sullymaz admin
 #</Limit>
 
-DirectoryIndex produit.php
+DirectoryIndex pages.php
 
