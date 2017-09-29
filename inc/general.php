@@ -11,7 +11,7 @@ if (!$lg) {$lg="fr" ;}
 
 // LE NOM DU FICHIER .PHP = $pg
 if (!$pg) {preg_match("/.*\/(.*)\.php$/",$_SERVER["SCRIPT_NAME"],$regs); $pg = $regs[1];}
-$defaultpg = "accueil-menage-repassage-couture-mouscron";
+$defaultpg = "accueil-ambulances-dhm-mouscron";
 
 if ( !preg_replace('/[a-z0-9]/',$pg,1) ) { 	$pg = $defaultpg; } 
 elseif ( !file_exists("pages/$pg.php") ) {$pg = $defaultpg;  }
