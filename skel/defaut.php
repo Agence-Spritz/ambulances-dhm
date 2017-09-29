@@ -189,18 +189,18 @@
 
 						<ul class="norightborder norightpadding norightmargin">
 							<li class="<?=($pg=='accueil-ambulances-dhm-mouscron')?('current'):('')?>"><a href="accueil-ambulances-dhm-mouscron.php"><div><i class="icon-home2" ></i> DHM</div></a></li>		
-							<li class="<?=($pg=='page' && $id>=3 && $id<=5)?('current'):('')?>"><a href="prise-en-charge-transport-ambulance--3--page"><div><i class="icon-home" ></i> Prise en charge</div></a>
+							<li class="<?=($pg=='page' && $id>=3 && $id<=5)?('current'):('')?>"><a href="prise-en-charge-transport-ambulance--3--prise-en-charge"><div><i class="icon-home" ></i> Prise en charge</div></a>
 								<ul>
-									<li><a href="prise-en-charge-transport-hopital--3--page"><div>Pourquoi / pour qui ?</div></a></li>
-									<li><a href="prise-en-charge-transport-medicalise--4--page"><div>Transport médicalisé</div></a></li>
-									<li><a href="prise-en-charge-transport-non-medicalise--5--page"><div>Transport non médicalisée</div></a></li>
-									<li><a href="prise-en-charge-transport-vsl--5--page"><div>Transport VSL</div></a></li>
-									<li><a href="prise-en-charge-hospitalisation-mouscron--5--page"><div>Hospitalisation & sortie</div></a></li>
-									<li><a href="prise-en-charge-forfait-tarif--5--page"><div>Forfaits et tarifs</div></a></li>
+									<li><a href="prise-en-charge-transport-hopital--3--prise-en-charge"><div>Pourquoi / pour qui ?</div></a></li>
+									<li><a href="prise-en-charge-transport-medicalise--4--prise-en-charge"><div>Transport médicalisé</div></a></li>
+									<li><a href="prise-en-charge-transport-non-medicalise--5--prise-en-charge"><div>Transport non médicalisée</div></a></li>
+									<li><a href="prise-en-charge-transport-vsl--5--prise-en-charge"><div>Transport VSL</div></a></li>
+									<li><a href="prise-en-charge-hospitalisation-mouscron--5--prise-en-charge"><div>Hospitalisation & sortie</div></a></li>
+									<li><a href="prise-en-charge-forfait-tarif--5--prise-en-charge"><div>Forfaits et tarifs</div></a></li>
 								</ul>
 							</li>
 							<li class="<?=($pg=='equipe')?('current'):('')?>"><a href="presentation-equipe-ambulance-mouscron-luingne-herseaux-dottignies--equipe"><div><i class="icon-camera"></i>Equipe</div></a></li>
-							<li class="<?=($pg=='reserver')?('current'):('')?>"><a href="reservation-transport-hopital-mouscron-ambulance--page"><div><i class="icon-camera"></i>Réserver</div></a></li>
+							<li class="<?=($pg=='reserver')?('current'):('')?>"><a href="reservation-transport-hopital-mouscron-ambulance--reserver-en-ligne"><div><i class="icon-camera"></i>Réserver</div></a></li>
 							<li class="<?=($pg=='qualite')?('current'):('')?>"><a href="qualite-service-transport-hopital--6--page"><div><i class="icon-users"></i>Qualité</div></a></li>
                             <li class="<?=($pg=='actu')?('current'):('')?>"><a href="actualites-ambulances-dhm--blog"><div><i class="icon-link"></i>Actu</div></a></li>
 							<li class="<?=($pg=='contact')?('current'):('')?>"><a href="contacter-bonne-femme-de-menage-serieuse--contact"><div><i class="icon-envelope"></i>Contact</div></a></li>
