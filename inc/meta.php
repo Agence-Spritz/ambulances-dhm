@@ -33,7 +33,7 @@ $ogdescr='Femme de ménage, repassage, petits travaux de couture';
 	$titre=$titremeta.", ".strip_tags($rubmeta);
 	$description=substr($textemeta,0,250);
 	$keywords=motcle($titremeta).",".motcle($description);
-  	$ogimg='http://'.$_SERVER[HTTP_HOST].dirname($_SERVER["PHP_SELF"]).'/images/pages-femme-menage-mouscron-repassage-herseaux/'.$IDmeta.'.jpg';
+  	$ogimg='http://'.$_SERVER[HTTP_HOST].dirname($_SERVER["PHP_SELF"]).'/images/pages-ambulance-mouscron-transport-hopital/'.$IDmeta.'.jpg';
 	$ogtitre=$ogtitre.": ".$titremeta;
 	$ogdescr=$description;
   } 
@@ -46,7 +46,7 @@ $ogdescr='Femme de ménage, repassage, petits travaux de couture';
 	$titre=strtolower($titremeta)."";
 	$description=substr($textemeta,0,250);
 	$keywords=motcle($titremeta).",".motcle($description);
-  	$ogimg='http://'.$_SERVER[HTTP_HOST].dirname($_SERVER["PHP_SELF"]).'/images/pages-femme-menage-mouscron-repassage-herseaux/'.$IDmeta.'.jpg';
+  	$ogimg='http://'.$_SERVER[HTTP_HOST].dirname($_SERVER["PHP_SELF"]).'/images/pages-ambulance-mouscron-transport-hopital/'.$IDmeta.'.jpg';
 	$ogtitre=$ogtitre.": ".$titremeta;
 	$ogdescr=$description;
   } 
