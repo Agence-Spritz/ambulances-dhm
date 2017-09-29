@@ -86,7 +86,7 @@ function redim_img_url($url,$largmax,$hautmax)
 	{   list($w,$h) = getimagesize("$url") ;
 		if ( $w > $largmax ) { $h = ( $h / $w ) * $largmax ; $w = $largmax ;}
     	if ( $h > $hautmax ) { $w = ( $w / $h ) * $hautmax ; $h = $hautmax ; }
-		print "<img src='".$url."?".time()."' width=$w height=$h >";
+		print "<img class='mignature' src='".$url."?".time()."' width=$w height=$h >";
 	} /*else { 	print "<img src='img/no.jpg' width=$largmax height=146 border=0 class='tablebordrose'>";}*/
 }
 
@@ -129,6 +129,7 @@ function del_dir($dirName) {
        echo 'Folder "<b>'.$dirName.'</b>" doesn\'t exist.';
    }
 }
+
 
 // AFFICHE LES RUBRIQUE EN TEXTE
 function stock($valeur,$lg)

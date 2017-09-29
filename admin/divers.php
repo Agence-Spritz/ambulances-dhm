@@ -1,5 +1,5 @@
 <?
-include "include/menu.php";
+include "include/menu-new.php";
 
 // VARIABLES
 $titrepage= "Email formulaire / Coordonn&eacute;es";
@@ -19,11 +19,16 @@ $nbr=0; // Nombre de photos
 $chps=array('mail1','coordonnees');
 $chpsNb = count($chps);
 ?>
-<div id="GENERAL" style="width:<?=$largtabl?>px;">
-
-<div id="titreadmin" style="width:<?=$largtabl?>px;" class='grandnoir'>
-	<?=$titrepage?>
-</div>
+ 		<section class="padding-top-30 padding-bottom-30 section-bloc bloc-titre">
+		    <div class="row">
+		        <div class="col-sm-6 col-md-6">
+			        <h2><?=$titrepage?></h2>
+		        </div>
+			    <div class="col-sm-6 col-md-6">
+		        </div>
+				<div class="clearfix"></div>
+		    </div>
+	    </section>
 <?php    
 // EFFACEMENT
 if ( $del ) {	
@@ -56,23 +61,6 @@ if ( $Submit )
     } 
 	unset($ID,$mail1,$coordonnees);
 	
-	/*
-	// ENVOYER LES PHOTOS
-	$nom_tmp = $_FILES['vignette']['tmp_name']; sent_photo($updatevign,$nom_tmp,$chemin); 
-	for ($a=1; $a<=$nbr; $a++){  $nom_tmp = $_FILES['photo'.$a]['tmp_name'] ; sent_photo($updatefile[$a],$nom_tmp,$chemin);}
- 	
-	// REDIMENSION DES PHOTOS
-	if (file_exists($chemin.$updatevign) && $updatevign ) {		list($w,$h) = getimagesize($chemin.$updatevign) ;		if ($w >$redim_w || $h>$redim_h) 		{ redimage("$chemin$updatevign","$chemin$updatevign","$redim_w","$redim_h");}}
-	for ($a=1; $a<=$nbr; $a++){
-		if (file_exists($chemin.$updatefile[$a]) && $updatefile[$a] ) {		
-			list($w,$h) = getimagesize($chemin.$updatefile[$a]) ;		
-			redimage("$chemin$updatefile[$a]","$chemin$updatefile[$a]","$redim_w","$redim_h") ;
-		}
-	}
-			
-	 IMPRESSION DU FILIGRANE
-	if (file_exists($chemin.$updatefile) && $updatefile ) {		filigrane("$chemin$updatefile","img/filigrane.png");}
-	*/
 } // FIN DU SUBMIT
 
 // RECUPERATION DES VALEURS ENREGISTREES
@@ -81,67 +69,67 @@ if ( $modif )
 	list($ID,$mail1,$coordonnees) = $result;
 }  
 ?>
-<?php if ($msg) {?><div id="msg" style="width:<?=$largtabl?>px; float:left" class="normalvert"><?=$msg?></div><?php } ?>
-<?php if ($msgerror) {?><div id="msgerror" style="width:<?=$largtabl?>px; float:left" class="normalrouge"><?=$msgerror?></div><?php } ?>
+		<!-- Messages d'alertes ou de confirmation -->
+		<div class="row">
+	        <div class="col-sm-12 col-md-12">
+				<?php if ($msg) {?>
+					<div class="alert alert-success" role="alert"><?=$msg?></div>
+				<?php } ?>
+				<?php if ($msgerror) {?>
+				<div class="alert alert-danger" role="alert"><?=$msgerror?></div>
+				<?php } ?>
+	        </div>
+		</div>
+		
+		<section class="padding-top-30 padding-bottom-30 section-bloc">
+		    <div class="row">
 
-<form method="post" action="" enctype="multipart/form-data">
-    <input type="hidden" name="modif" value="<?=$modif?>">
-    <input type="hidden" name="word" value="<?=$word?>">
+				<form method="post" action="" enctype="multipart/form-data">
+				    <input type="hidden" name="modif" value="<?=$modif?>">
+				    <input type="hidden" name="word" value="<?=$word?>">
     
-<div id="contenu" style="width:<?=$largtabl*0.6?>px; float:left" class="normalgris">
-        <?	// BOUTON LANGUES    
-        if (isset($langues) && count($langues)>1) {
-            echo "<p><i class='fa fa-flag fa-1x'></i> &nbsp;";
-            for ( $a=0 ; $a<count($langues) ; $a++ ) {
-                if ( $lg == $langues[$a] || (!$a&&!$lg) ) { $addselected = " checked"; } else { $addselected = ""; }
-                if ( $a ) { print ",&nbsp;"; } 
-            
-            echo $langues[$a]."<input type=\"radio\" name=\"lg\" value=\"".$langues[$a]."\"$addselected>";
-            }
-            echo "</p>";
-        } else { echo '<input type="hidden" name="lg" value="'.$langues[0].'">';}
-        ?>
-        
-        <p><span class="libchamps"><i class='fa fa-envelope fa-1x'></i> Email :</span>
-          <input name="<?=$chps[0]?>" value="<?=$$chps[0]?>" type="text" required size="75" /></p>
-    </div>
-    
-    <?php if ($masquervignette!=1) { ?>
-    <div id="contenu" style="width:<?=$largtabl*0.35?>px; float:right" class="normalgris">
-    	 <p align="center" class="grandnoir"><i class='fa fa-camera fa-1x'></i> Photos</p>
-         <p><span class="libchamps">Vignette</span><input type="file" name="vignette"  value="" /></p>
-		<?
-		 if ( $modif && file_exists($chemin.$modif.".jpg") ) {	
-				redim_img_url($chemin.$modif.".jpg",$wmax,$hmax);
-				print("<a href=?modif=$modif&delphoto=$modif.jpg><i class='fa fa-trash-o fa-1x'></i></a> photo $a<br/><br/>");
-			}
-		for ($a=1; $a<=$nbr; $a++){ ?>
-        <p><span class="libchamps">Photo <?=$a?> / <?=$photosize?></span><input type="file" name="photo<?=$a?>"  value=""> </p>
-        <?php 
-		} 	
-		//Afficher les photos
-		for ($a=1; $a<=$nbr; $a++){
-			if ( $modif && file_exists($chemin.$modif."-".$a.".jpg") ) {	
-				redim_img_url($chemin.$modif."-".$a.".jpg",$wmax,$hmax);
-				print("<a href=?modif=$modif&delphoto=$modif-$a.jpg> <i class='fa fa-trash-o fa-1x'></i></a> photo $a<br/><br/>");
-			}
-		} 
-		?>
-    </div><?php } ?>
-    
-    <div id="contenu" style="width:<?=$largtabl*0.6?>px; float:left; margin-top:10px" class="normalgris" align="center">
-      <p class="grandnoir"><i class='fa fa-align-justify fa-1x'></i> Coordonn&eacute;es</p> 
-      <p>
-        <textarea name="<?=$chps[1]?>" rows="10" cols="50" ><?=$$chps[1]?>
-        </textarea>
-        <script type="text/javascript">CKEDITOR.replace( '<?=$chps[1]?>' );</script>
-        <br /><input type="submit" name="Submit" value="Enregistrer" />
-      </p>
-    </div>
+						<div class="col-sm-12 col-md-6">
+							<?	// BOUTON LANGUES    
+					        if (isset($langues) && count($langues)>1) {
+					            echo "<h4><i class='fa fa-flag '></i> Langue</h4>";
+					            echo '<div class="radio" style="margin-bottom: 25px;">';
+					            for ( $a=0 ; $a<count($langues) ; $a++ ) {
+					                if ( $lg == $langues[$a] || (!$a&&!$lg) ) { $addselected = " checked"; } else { $addselected = ""; }
+					                if ( $a ) { print ",&nbsp;"; } 
+					            echo '<label class="radio-inline">';
+					            echo "<input type=\"radio\" name=\"lg\" value=\"".$langues[$a]."\"$addselected>".$langues[$a];
+					            echo "</label>";
+					            }
+					            echo '</div>';
+					            
+					        } else { echo '<input type="hidden" name="lg" value="'.$langues[0].'">';}
+					        ?> 
+					        
+			        		<h4><i class='fa fa-envelope '></i> Email</h4>
+					        <div class="form-group">
+						        <input name="<?=$chps[0]?>" value="<?=$$chps[0]?>" class="form-control" type="text" required  />
+					        </div>
+					               
+    					</div>
+    					
+    					<div class="col-sm-12 col-md-6">
+							<!-- Colonne vide, déstinée à accueillir les photos-->
+						</div>
+						<div class="clearfix"></div>
 
-</form>
+						<div class="col-sm-12 col-md-12 texte-principal">
+						    
+						<h4><i class='fa fa-align-justify '></i> Coordonn&eacute;es</h4>
+						<textarea name="<?=$chps[1]?>" row contenu-admins="10" cols="50" ><?=$$chps[1]?></textarea><script type="text/javascript">CKEDITOR.replace( '<?=$chps[1]?>' );</script>
+						<div class="clearfix"></div>
+						<button type="submit" name="Submit" value="Enregistrer" class="btn btn-default bouton-submit">Enregistrer</button>
+						
+						</div>
 
-<div style="clear:both"></div>
-</div>
+				</form>
+		    </div>
+		</section>
+
+	</div>
 </body>
 </html>
