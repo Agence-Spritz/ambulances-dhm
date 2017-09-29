@@ -1,4 +1,4 @@
-#AuthUserFile /home/rmxtgcomtk/www/ambulancesdhm.be.kid-style.be/admin/.htpasswd
+#AuthUserFile /home/www/ambulancesdhm.be/admin/.htpasswd
 #AuthGroupFile /dev/null
 #AuthName "Acces Restreint"
 #AuthType Basic
