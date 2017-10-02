@@ -14,6 +14,8 @@
 	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
 	<link rel="stylesheet" href="css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+	
+	<link rel="stylesheet" href="css/font/flaticon.css" type="text/css" />
 
 	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -77,17 +79,12 @@
 			<div class="tp-banner-container">
             	<!-- Logo slide  -->
                 <div style="position: absolute; margin:30px 0 0 10px; width:100%; z-index:9999">
-                	<a href="tel:+3256335110">
-                    	<img src="images/logo-mss-mouscron.png" style="max-width:233px; max-height:233px; width:50%; border-radius:5px;">
-                		<br /><h2 style="font-family:'Lato'; color:#FFF; text-shadow:2px 2px #000; margin-left:30px"> 056 33 51 10 </h2>
+                	<a href="accueil-ambulances-dhm-mouscron.php">
+                    	<img src="images/logo.png" style="">
+                    	<h2 style="font-family:'Lato'; color:#FFF; margin-left:40px; margin-top: 15px; font-size: 30px;">24/24 & 7j/7 - 056 345 411</h2>
                     </a>
                     
-					<!-- BOut Descendre  -->
-                    <div style="margin:10px 0 0 70px; width:100%" >
-                    <a href="#bas">
-						<img src="images/accueil-fleche.png" style="width:25%; max-width:100px">
-                    </a>
-                    </div>
+                   
                 </div>
 
                 <div class="tp-banner" >
@@ -101,64 +98,64 @@
 							<img src="images/slider/<?=$IDd?>.jpg" title="Ambulances DHM mouscron" alt="<?=$titre?>. <?=$description?>. <?=$keywords?>."  data-bgposition="left center" data-kenburns="on" data-duration="8000" data-ease="Linear.easeNone" data-scalestart="130" data-scaleend="100" data-bgpositionend="right center">
 							<!-- LAYERS -->
 
-							<!-- LAYER NR. 2 -->
-							<div class="tp-caption customin ltl tp-resizeme revo-slider-caps-text uppercase"
-							data-x="400"
-							data-y="215"
-							data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
-							data-speed="800"
-							data-start="1000"
-							data-easing="easeOutQuad"
-							data-splitin="none"
-							data-splitout="none"
-							data-elementdelay="0.01"
-							data-endelementdelay="0.1"
-							data-endspeed="1000"
-							data-endeasing="Power4.easeIn" style="z-index: 3;"><?=$introd?></div>
-
-							<div class="tp-caption customin ltl tp-resizeme revo-slider-emphasis-text nopadding noborder"
-							data-x="397"
-							data-y="230"
-							data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
-							data-speed="800"
-							data-start="1200"
-							data-easing="easeOutQuad"
-							data-splitin="none"
-							data-splitout="none"
-							data-elementdelay="0.01"
-							data-endelementdelay="0.1"
-							data-endspeed="1000"
-							data-endeasing="Power4.easeIn" style="z-index: 3; font-size: 60px;"><?=$titred?></div>
-
-							<div class="tp-caption customin ltl tp-resizeme revo-slider-desc-text tleft"
-							data-x="400"
-							data-y="340"
-							data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
-							data-speed="800"
-							data-start="1400"
-							data-easing="easeOutQuad"
-							data-splitin="none"
-							data-splitout="none"
-							data-elementdelay="0.01"
-							data-endelementdelay="0.1"
-							data-endspeed="1000"
-							data-endeasing="Power4.easeIn" style="z-index: 3; max-width: 550px; white-space: normal;"><?=$texted?></div>
-
-							<?php if($liend) {?>
-                            <div class="tp-caption customin ltl tp-resizeme"
-							data-x="400"
-							data-y="450"
-							data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
-							data-speed="800"
-							data-start="1550"
-							data-easing="easeOutQuad"
-							data-splitin="none"
-							data-splitout="none"
-							data-elementdelay="0.01"
-							data-endelementdelay="0.1"
-							data-endspeed="1000"
-							data-endeasing="Power4.easeIn" style="z-index: 3;"><a href="<?=$liend?>" class="button button-white button-light button-border button-large button-rounded tright nomargin"><span><i class="icon-plus"></i> d'Info</span> <i class="icon-angle-right"></i></a></div>
-							<?php } ?>
+								<!-- LAYER NR. 2 -->
+								<div class="tp-caption customin ltl tp-resizeme revo-slider-caps-text uppercase"
+								data-x="600"
+								data-y="215"
+								data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+								data-speed="800"
+								data-start="1000"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 3;"><?=$introd?></div>
+	
+								<div class="tp-caption customin ltl tp-resizeme revo-slider-emphasis-text nopadding noborder"
+								data-x="597"
+								data-y="230"
+								data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+								data-speed="800"
+								data-start="1200"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 3; font-size: 60px;"><?=$titred?></div>
+	
+								<div class="tp-caption customin ltl tp-resizeme revo-slider-desc-text tleft"
+								data-x="600"
+								data-y="340"
+								data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+								data-speed="800"
+								data-start="1400"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 3; max-width: 550px; white-space: normal;"><?=$texted?></div>
+	
+								<?php if($liend) {?>
+	                            <div class="tp-caption customin ltl tp-resizeme"
+								data-x="600"
+								data-y="450"
+								data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;e:Power4.easeOutQuad;"
+								data-speed="800"
+								data-start="1550"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 3;"><a href="<?=$liend?>" class="button button-white button-light button-border button-large button-rounded tright nomargin"><span><i style="font-size: 31px; margin: 10px 0px 0px 0px; padding-left: 40px; padding-right: 40px; width: auto;" class="icon-angle-down fa-2x"></i></span></a></div>
+								<?php } ?>
                             
 						</li>
                         <?php } ?>
@@ -179,8 +176,8 @@
 					<!-- LOGO
 					============================================= -->
 					<div id="logo">
-						<a href="tel:+3256335110" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo-mss.png" title="Retour &agrave; l'accueil" alt="<?=$titre?>"></a>
-						<a href="tel:+3256335110" class="retina-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo-mss.png" title="Retour &agrave; l'accueil" alt="<?=$titre?>"></a>
+						<a href="tel:+3256335110" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo-nav.png" title="Retour &agrave; l'accueil" alt="<?=$titre?>"></a>
+						<a href="tel:+3256335110" class="retina-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo-nav.png" title="Retour &agrave; l'accueil" alt="<?=$titre?>"></a>
                     </div>
 
 					<!-- MENU TOP
@@ -189,7 +186,7 @@
 
 						<ul class="norightborder norightpadding norightmargin">
 							<li class="<?=($pg=='accueil-ambulances-dhm-mouscron')?('current'):('')?>"><a href="accueil-ambulances-dhm-mouscron.php"><div><i class="icon-home2" ></i> DHM</div></a></li>		
-							<li class="<?=($pg=='page' && $id>=3 && $id<=5)?('current'):('')?>"><a href="prise-en-charge-transport-ambulance--3--prise-en-charge"><div><i class="icon-home" ></i> Prise en charge</div></a>
+							<li class="<?=($pg=='page' && $id>=3 && $id<=5)?('current'):('')?>"><a href="prise-en-charge-transport-ambulance--3--prise-en-charge"><div><i class="flaticon-ambulance" ></i> Prise en charge</div></a>
 								<ul>
 									<li><a href="prise-en-charge-transport-hopital--3--prise-en-charge"><div>Pourquoi / pour qui ?</div></a></li>
 									<li><a href="prise-en-charge-transport-medicalise--4--prise-en-charge"><div>Transport médicalisé</div></a></li>
@@ -199,11 +196,11 @@
 									<li><a href="prise-en-charge-forfait-tarif--5--prise-en-charge"><div>Forfaits et tarifs</div></a></li>
 								</ul>
 							</li>
-							<li class="<?=($pg=='equipe')?('current'):('')?>"><a href="presentation-equipe-ambulance-mouscron-luingne-herseaux-dottignies--equipe"><div><i class="icon-camera"></i>Equipe</div></a></li>
-							<li class="<?=($pg=='reserver')?('current'):('')?>"><a href="reservation-transport-hopital-mouscron-ambulance--reserver-en-ligne"><div><i class="icon-camera"></i>Réserver</div></a></li>
-							<li class="<?=($pg=='qualite')?('current'):('')?>"><a href="qualite-service-transport-hopital--6--page"><div><i class="icon-users"></i>Qualité</div></a></li>
-                            <li class="<?=($pg=='actu')?('current'):('')?>"><a href="actualites-ambulances-dhm--blog"><div><i class="icon-link"></i>Actu</div></a></li>
-							<li class="<?=($pg=='contact')?('current'):('')?>"><a href="contacter-bonne-femme-de-menage-serieuse--contact"><div><i class="icon-envelope"></i>Contact</div></a></li>
+							<li class="<?=($pg=='equipe')?('current'):('')?>"><a href="presentation-equipe-ambulance-mouscron-luingne-herseaux-dottignies--equipe"><div><i class="flaticon-users"></i>Equipe</div></a></li>
+							<li class="<?=($pg=='reserver')?('current'):('')?>"><a href="reservation-transport-hopital-mouscron-ambulance--reserver-en-ligne"><div><i class="flaticon-route"></i>Réserver</div></a></li>
+							<li class="<?=($pg=='qualite')?('current'):('')?>"><a href="qualite-service-transport-hopital--6--page"><div><i class="flaticon-star"></i>Qualité</div></a></li>
+                            <li class="<?=($pg=='actu')?('current'):('')?>"><a href="actualites-ambulances-dhm--blog"><div><i class="flaticon-edit"></i>Actu</div></a></li>
+							<li class="<?=($pg=='contact')?('current'):('')?>"><a href="contacter-bonne-femme-de-menage-serieuse--contact"><div><i class="flaticon-placeholder"></i>Contact</div></a></li>
 						</ul>
 
 					</nav>
@@ -216,54 +213,8 @@
 
 		<section id="content">
 			<div class="content-wrap">
-				<div class="container clearfix">
 				
 				<?php include ("pages/".$pg.".php"); ?>
-
-                <!-- HORAIRES COORD PHOTOS
-                ============================================= -->
-                <div class="container clearfix">
-                    <!--Horaires -->
-                    <div class="col_one_fourth nobottommargin">
-                        <div class="fancy-title title-border">
-                            <h4>Horaires</h4>
-                        </div>
-                        <p>Le centre de repassage est ouvert du lundi au vendredi de 7h à 18h non-stop ainsi que le samedi matin de 9h à 12h. Nos bureaux sont ouverts du lundi au vendredi de 7h30 à 18h non-stop.</p>
-                        <a href="#" class="button button-rounded button-dark noleftmargin"><i class="icon-envelope"></i> Envoyer un Email</a>
-                    </div>
-                    
-                    <!--Coordonnées -->
-                    <div class="col_one_fourth nobottommargin">
-                        <div class="fancy-title title-border">
-                            <h4>Coordonn&eacute;es</h4>
-                        </div>
-                        <p>Rue du nouveau monde- 106, 7700 Mouscron BELGIQUE</p>
-                        <ul class="iconlist nobottommargin">
-                            <li><i class="icon-phone color"></i> <strong><a href="tel=+3256345411">Tel:</strong> +32 56 34 54 11</a></li>
-                        </ul>
-                    </div>
-                
-                    <!--Photos -->
-                    <div class="col_half nobottommargin col_last">
-                        <div class="fancy-title title-border">
-                            <h4>Galerie</h4>
-                        </div>
-    
-                        <div class="masonry-thumbs col-4 clearfix" data-lightbox="gallery" style="width: 100.3%;">
-							<?php 
-							$Qmb=mysqli_query($link, "SELECT ID, titre FROM ".$table_prefix."_pages WHERE page='photo' AND masquer!=1 ORDER BY rand() DESC LIMIT 0,10 "); $delayP=0; $n=0;
-							while (list($IDp,$titrep)=mysqli_fetch_array($Qmb)){
-								$delayP=$delayP+100;
-								list($width, $height, $type) = getimagesize("images/pages-ambulance-mouscron-transport-hopital/".$IDp."-v.jpg");
-								if ($width>$height) { $n++;
-									if ($n<=6) {
-							?>
-                                        <a href="images/pages-ambulance-mouscron-transport-hopital/<?=$IDp?>.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/pages-ambulance-mouscron-transport-hopital/<?=$IDp?>-v.jpg" alt="<?=$titrep?>" data-animate="zoomIn" data-delay="<?=$delayP?>" ></a>
-                            <?php }}} ?>
-                            <a href="titres-ambulances-mouscron-luingne-herseaux-dottignies--photo"><img class="image_fade" src="images/photo.jpg" data-animate="zoomIn" data-delay="800" style="height:90px"></a>
-                        </div>
-                    </div>
-                </div>
 
         	</div>
       	</section>
@@ -275,9 +226,8 @@
 				<div class="container clearfix">
 
 					<div class="col_half">
-						&copy; <?=date("Y")?> <?=$nom_titre_meta?>, <a href="http://www.creationdesites.net" target="_blank" title="Cr&eacute;ation de site Mouscron">Création de site Remix Web <span class="creationdesite"></span></a>
-						<br />
-                        <div class="copyright-links"><a href="mentions-mouscron-ambulances-dhm--1--page">Mentions</a></div>
+						&copy; <?=date("Y")?> <?=$nom_titre_meta?>, <a href="mentions-mouscron-ambulances-dhm--1--page">Mentions</a>, <a href="http://www.creationdesites.net" target="_blank" title="Cr&eacute;ation de site Mouscron">Site réalisé par Remix Web <span class="creationdesite"></span></a>
+						
 					</div>
 
 					<div class="col_half col_last tright">

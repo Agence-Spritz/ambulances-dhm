@@ -95,6 +95,13 @@ $mrpropre=rtrim($newmrpropre,'-'); // efface le dernier "-"
 return $mrpropre;
 }
 
+// permet de convertir une chaine en slug
+function slugify($text)
+{ 
+    $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+    return strtolower(preg_replace('/[^A-Za-z0-9-]+/', '-', $text));
+}
+
 function motcle($str){
     $str=preg_replace('/$nbsp;/', " ",$str);
 	$strArray = preg_split("/[\s,\.\:\"\'\?\!]+/", $str);
