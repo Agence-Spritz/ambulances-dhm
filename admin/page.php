@@ -18,7 +18,7 @@ $redim_w=1140; $redim_h=390;
 
 
 // CHAMPS
-$chps=array('page','titre','texte','dbu','masquer','lg','rub');
+$chps=array('page','titre','texte','dbu','masquer','lg','rub', 'texte2');
 $chpsNb = count($chps);
 ?>
 
@@ -71,7 +71,7 @@ if ( $Submit )
 		for ($a=1; $a<=$nbr; $a++){	if ( $_FILES['photo'.$a] ) { $updatefile[$a]=mysqli_insert_id($link)."-".$a.".jpg"; } }
 	  	$msg.= "<i class='fa fa-check-circle fa-2x'></i> Enregistrement ajout&eacute;";
     }
-	unset($ID,$titre,$texte,$dbu,$masquer,$lg,$rub);
+	unset($ID,$titre,$texte,$dbu,$masquer,$lg,$rub,$texte2);
 
 	// ENVOYER LES PHOTOS
 	$nom_tmp = $_FILES['vignette']['tmp_name']; sent_photo($updatevign,$nom_tmp,$chemin); 
@@ -91,7 +91,7 @@ if ( $Submit )
 // RECUPERATION DES VALEURS ENREGISTREES
 if ( $modif ) 
 {	$result = mysqli_fetch_array( mysqli_query($link, " SELECT ID,$liste1 FROM $tableencours WHERE ID=$modif ") );
-	list($ID,$page,$titre,$texte,$dbu,$masquer,$lg,$rub ) = $result;
+	list($ID,$page,$titre,$texte,$dbu,$masquer,$lg,$rub,$texte2 ) = $result;
 	$$chps[3]=date_barre($$chps[3]);
 }  
 ?>
@@ -136,6 +136,11 @@ if ( $modif )
 							        <h4><i class='fa fa-pencil-square-o '></i> Titre</h4>
 							        <div class="form-group">
 								        <input name="<?=$chps[1]?>" value="<?=$$chps[1]?>" class="form-control" type="text" required  />
+							        </div>
+							        
+							        <h4><i class='fa fa-pencil-square-o '></i> Mini texte intro</h4>
+							        <div class="form-group">
+								        <input name="<?=$chps[7]?>" value="<?=$$chps[7]?>" class="form-control" type="text" required  />
 							        </div>
 									
 							</div> 
@@ -232,7 +237,7 @@ if ( $modif )
 					      	</thead>
 							<tbody>
 							  <?php 
-							  while ( list($ID,$page,$titre,$texte,$dbu,$masquer,$lg,$rub) = mysqli_fetch_array($result) ) 
+							  while ( list($ID,$page,$titre,$texte,$dbu,$masquer,$lg,$rub,$texte2) = mysqli_fetch_array($result) ) 
 							  { 
 							  	if ($masquer=="1") {$class="normalgrisclair";} else {$class="";}
 							    echo "<tr class='".$class."'>";
