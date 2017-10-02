@@ -29,6 +29,8 @@ include ("include/cookieliendirect.txt") ;
       <link href="./css/animate.min.css" rel="stylesheet">
       <!-- Menu Hover -->
       <link href="./css/bootstrap-dropdownhover.min.css" rel="stylesheet">
+       <!-- CK EDITOR -->
+	  <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
       <!-- JavaScripts -->
       <script src="./js/modernizr.js"></script>
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -50,8 +52,6 @@ include ("include/cookieliendirect.txt") ;
       <script src="./js/jquery-migrate.min.js"></script>
       <!-- Dropdown Hover  -->
       <script src="./js/bootstrap-dropdownhover.min.js"></script>
-      <!-- CK EDITOR -->
-	  <script type="text/javascript" src="./ckeditor/ckeditor.js"></script>
 
 </head>
 
