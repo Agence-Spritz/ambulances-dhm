@@ -12,9 +12,26 @@ $chemin = "../images/pages-ambulance-mouscron-transport-hopital/";  							// "/
 $wmax = 100; $hmax = 80;  $tdvisuphoto = $wmax*2+20;  	// Dimension pour affichage des vigettes
 $redim_w=1140; $redim_h=390;
 
-
-	$masquervignette=0;
+// masquer les vignettes pour certaines pages
+if($modif=='135') {
+	
+	$masquervignette=1;
 	$nbr=0; // Nombre de photos
+	
+} else {
+	$masquervignette=0;
+	$nbr=1; // Nombre de photos
+}
+
+// Masquer la description pour certaines pages
+if($modif=='135'||$modif=='134') {
+	
+	$masquerdescription=1;
+	
+} else {
+	$masquerdescription=0;
+}
+	
 
 
 // CHAMPS
@@ -138,20 +155,22 @@ if ( $modif )
 								        <input name="<?=$chps[1]?>" value="<?=$$chps[1]?>" class="form-control" type="text" required  />
 							        </div>
 							        
-							        <h4><i class='fa fa-pencil-square-o '></i> Mini texte intro</h4>
-							        <div class="form-group">
-								        <input name="<?=$chps[7]?>" value="<?=$$chps[7]?>" class="form-control" type="text" required  />
-							        </div>
+							        <?php if($modif=='120') { ?>
+								        <h4><i class='fa fa-pencil-square-o '></i> Sous-titre</h4>
+								        <div class="form-group">
+									        <input name="<?=$chps[7]?>" value="<?=$$chps[7]?>" class="form-control" type="text" required  />
+								        </div>
+							        <?php } ?>
 									
 							</div> 
 							<div class="col-sm-12 col-md-6 ">
+								<?php if ($masquervignette!=1) { ?>
+								
 								<div class="zone-photos"> 
 					        			    
-							    <?php if ($masquervignette!=1) { ?>
-							    
 								    	 <h4><i class='fa fa-camera '></i> Photos (format: .jpg | taille: <?=$photosize?> pixels)</h4>
 								    	 <div class="form-group">
-								         <label>Vignette</label>
+								         <label>Vignette (photo en-tête)</label>
 								         	<input type="file" name="vignette"  value="" />
 								         </div>
 										<?
@@ -161,7 +180,7 @@ if ( $modif )
 											}
 										for ($a=1; $a<=$nbr; $a++){ ?>
 										<div class="form-group">
-								        <label>Photo <?=$a?></label>
+								        <label>Photo (facultatif) <?=$a?></label>
 									        <input type="file" name="photo<?=$a?>"  value="">
 								        </div>
 								        <?php 
@@ -174,15 +193,19 @@ if ( $modif )
 											}
 										} 
 										?>
-							    <?php } ?>
 								</div>
+								
+								<?php } ?>
 							</div>
 							<div class="clearfix"></div>
 				
 					<div class="col-sm-12 col-md-12 texte-principal">
 			    
+					<?php if($masquerdescription!=1) { ?>
 				      <h4><i class='fa fa-align-justify '></i> Texte principal</h4>
 				      <textarea name="<?=$chps[2]?>" row contenu-admins="10" cols="50" ><?=$$chps[2]?></textarea><script type="text/javascript">CKEDITOR.replace( '<?=$chps[2]?>' );</script>
+				    <?php } ?>
+				    
 				      <div class="clearfix"></div>
 				      <button type="submit" name="Submit" value="Enregistrer" class="btn btn-default bouton-submit">Enregistrer</button>
 				      

@@ -184,10 +184,10 @@ if ( $modif )
 							</div>
 
 							<div class="col-sm-12 col-md-6 ">
+								<?php if ($masquervignette!=1) { ?>
+								
 								<div class="zone-photos"> 
 					        			    
-							    <?php if ($masquervignette!=1) { ?>
-							    
 								    	 <h4><i class='fa fa-camera '></i> Photos (format: .jpg | taille: <?=$photosize?> pixels)</h4>
 								    	 <div class="form-group">
 								         <label>Vignette</label>
@@ -213,8 +213,9 @@ if ( $modif )
 											}
 										} 
 										?>
-							    <?php } ?>
+							    
 								</div>
+								<?php } ?>
 							</div>
 							<div class="clearfix"></div>
 

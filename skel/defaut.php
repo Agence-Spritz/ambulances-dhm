@@ -15,6 +15,8 @@
 	<link rel="stylesheet" href="css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
 	
+	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+	
 	<link rel="stylesheet" href="css/font/flaticon.css" type="text/css" />
 
 	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
@@ -79,10 +81,12 @@
 			<div class="tp-banner-container">
             	<!-- Logo slide  -->
                 <div style="position: absolute; margin:30px 0 0 10px; width:100%; z-index:9999">
-                	<a href="accueil-ambulances-dhm-mouscron.php">
+                	<a href="<?php echo $defaultpg; ?>.php">
                     	<img src="images/logo.png" style="">
-                    	<h2 style="font-family:'Lato'; color:#FFF; margin-left:40px; margin-top: 15px; font-size: 30px;">24/24 & 7j/7 - 056 345 411</h2>
                     </a>
+                    	
+                    <h2 style="font-family:'Lato'; color:#FFF; margin-left:40px; margin-top: 15px; font-size: 30px;">24/24 & 7j/7 - <a class="slider-main" href="tel:+3256345411">056 345 411</a></h2>
+                    
                     
                    
                 </div>
@@ -176,8 +180,8 @@
 					<!-- LOGO
 					============================================= -->
 					<div id="logo">
-						<a href="tel:+3256335110" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo-nav.png" title="Retour &agrave; l'accueil" alt="<?=$titre?>"></a>
-						<a href="tel:+3256335110" class="retina-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo-nav.png" title="Retour &agrave; l'accueil" alt="<?=$titre?>"></a>
+						<a href="<?php echo $defaultpg; ?>.php" class="standard-logo" data-dark-logo="images/images/logo-nav.png"><img src="images/logo-nav.png" title="Retour &agrave; l'accueil" alt="<?=$titre?>"></a>
+						<a href="<?php echo $defaultpg; ?>.php" class="retina-logo" data-dark-logo="images/images/logo-nav.png"><img src="images/logo-nav.png" title="Retour &agrave; l'accueil" alt="<?=$titre?>"></a>
                     </div>
 
 					<!-- MENU TOP
@@ -185,22 +189,22 @@
 					<nav id="primary-menu" class="style-5">
 
 						<ul class="norightborder norightpadding norightmargin">
-							<li class="<?=($pg=='accueil-ambulances-dhm-mouscron')?('current'):('')?>"><a href="accueil-ambulances-dhm-mouscron.php"><div><i class="icon-home2" ></i> DHM</div></a></li>		
-							<li class="<?=($pg=='page' && $id>=3 && $id<=5)?('current'):('')?>"><a href="prise-en-charge-transport-ambulance--3--prise-en-charge"><div><i class="flaticon-ambulance" ></i> Prise en charge</div></a>
+							<li class="<?=($pg=='accueil-ambulances-dhm-mouscron')?('current'):('')?>"><a href="<?php echo $defaultpg; ?>.php"><div><i class="icon-home2" ></i> DHM</div></a></li>		
+							<li class="<?=($pg=='prise-en-charge')?('current'):('')?>"><a href="prise-en-charge-transport-ambulance--3--prise-en-charge"><div><i class="flaticon-ambulance" ></i> Prise en charge</div></a>
 								<ul>
 									<li><a href="prise-en-charge-transport-hopital--3--prise-en-charge"><div>Pourquoi / pour qui ?</div></a></li>
 									<li><a href="prise-en-charge-transport-medicalise--4--prise-en-charge"><div>Transport médicalisé</div></a></li>
 									<li><a href="prise-en-charge-transport-non-medicalise--5--prise-en-charge"><div>Transport non médicalisée</div></a></li>
-									<li><a href="prise-en-charge-transport-vsl--5--prise-en-charge"><div>Transport VSL</div></a></li>
-									<li><a href="prise-en-charge-hospitalisation-mouscron--5--prise-en-charge"><div>Hospitalisation & sortie</div></a></li>
-									<li><a href="prise-en-charge-forfait-tarif--5--prise-en-charge"><div>Forfaits et tarifs</div></a></li>
+									<li><a href="prise-en-charge-transport-vsl--6--prise-en-charge"><div>Transport VSL</div></a></li>
+									<li><a href="prise-en-charge-hospitalisation-mouscron--136--prise-en-charge"><div>Hospitalisation & sortie</div></a></li>
+									<li><a href="prise-en-charge-forfait-tarif--137--prise-en-charge"><div>Forfaits et tarifs</div></a></li>
 								</ul>
 							</li>
-							<li class="<?=($pg=='equipe')?('current'):('')?>"><a href="presentation-equipe-ambulance-mouscron-luingne-herseaux-dottignies--equipe"><div><i class="flaticon-users"></i>Equipe</div></a></li>
-							<li class="<?=($pg=='reserver')?('current'):('')?>"><a href="reservation-transport-hopital-mouscron-ambulance--reserver-en-ligne"><div><i class="flaticon-route"></i>Réserver</div></a></li>
-							<li class="<?=($pg=='qualite')?('current'):('')?>"><a href="qualite-service-transport-hopital--6--page"><div><i class="flaticon-star"></i>Qualité</div></a></li>
-                            <li class="<?=($pg=='actu')?('current'):('')?>"><a href="actualites-ambulances-dhm--blog"><div><i class="flaticon-edit"></i>Actu</div></a></li>
-							<li class="<?=($pg=='contact')?('current'):('')?>"><a href="contacter-bonne-femme-de-menage-serieuse--contact"><div><i class="flaticon-placeholder"></i>Contact</div></a></li>
+							<li class="<?=($pg=='equipe')?('current'):('')?>"><a href="presentation-equipe-ambulance-mouscron-luingne-herseaux-dottignies--120--equipe"><div><i class="flaticon-users"></i>Equipe</div></a></li>
+							<li class="<?=($pg=='reserver-en-ligne')?('current'):('')?>"><a href="reservation-transport-hopital-mouscron-ambulance--132--reserver-en-ligne"><div><i class="flaticon-route"></i>Réserver</div></a></li>
+							<li class="<?=($pg=='page' && $id=='133')?('current'):('')?>"><a href="qualite-service-transport-hopital--133--page"><div><i class="flaticon-star"></i>Qualité</div></a></li>
+                            <li class="<?=($pg=='blog')?('current'):('')?>"><a href="actualites-ambulances-dhm--134--blog"><div><i class="flaticon-edit"></i>Actu</div></a></li>
+							<li class="<?=($pg=='contact')?('current'):('')?>"><a href="contacter-ambulance-mouscron--135--contact"><div><i class="flaticon-placeholder"></i>Contact</div></a></li>
 						</ul>
 
 					</nav>
@@ -211,14 +215,12 @@
 
 		<div class="clear"></div>
 
-		<section id="content">
-			<div class="content-wrap">
+		<!-- Contenu principal
+		============================================= -->
 				
-				<?php include ("pages/".$pg.".php"); ?>
+			<?php include ("pages/".$pg.".php"); ?>
 
-        	</div>
-      	</section>
-        
+        	
 		<!-- Footer
 		============================================= -->
 			<div id="copyrights">
@@ -226,33 +228,33 @@
 				<div class="container clearfix">
 
 					<div class="col_half">
-						&copy; <?=date("Y")?> <?=$nom_titre_meta?>, <a href="mentions-mouscron-ambulances-dhm--1--page">Mentions</a>, <a href="http://www.creationdesites.net" target="_blank" title="Cr&eacute;ation de site Mouscron">Site réalisé par Remix Web <span class="creationdesite"></span></a>
+						&copy; <?=date("Y")?> <?=$nom_titre_meta?>, <a href="mentions-mouscron-ambulances-dhm--1--page">Mentions légales</a>, <a href="http://www.creationdesites.net" target="_blank" title="Cr&eacute;ation de site Mouscron">Site réalisé par Remix Web <img src="images/salamandre.png" title="Création de site Remix Web" alt="Création de site Remix Web" /><span class="creationdesite"></span></a>
 						
 					</div>
 
 					<div class="col_half col_last tright">
 						<div class="fright clearfix">
-							<a href="http://www.facebook.com/sharer.php?u=http://<?=$_SERVER[HTTP_HOST]?><?=$_SERVER[REQUEST_URI]?>&t=<?=$ogtitre?>" class="social-icon si-small si-borderless si-facebook">
+							<a href="http://www.facebook.com/sharer.php?u=http://<?=$_SERVER[HTTP_HOST]?><?=$_SERVER[REQUEST_URI]?>&t=<?=$ogtitre?>" target="_blank" class="social-icon si-small si-borderless si-facebook">
 								<i class="icon-facebook"></i>
 								<i class="icon-facebook"></i>
 							</a>
 
-							<a href="http://twitter.com/intent/tweet/?url=<?=$_SERVER[HTTP_HOST]?><?=$_SERVER[REQUEST_URI]?>&text=<?=$ogtitre?>" class="social-icon si-small si-borderless si-twitter">
+							<a href="http://twitter.com/intent/tweet/?url=<?=$_SERVER[HTTP_HOST]?><?=$_SERVER[REQUEST_URI]?>&text=<?=$ogtitre?>" target="_blank" class="social-icon si-small si-borderless si-twitter">
 								<i class="icon-twitter"></i>
 								<i class="icon-twitter"></i>
 							</a>
 
-							<a href="https://plus.google.com/share?url=<?=$_SERVER[HTTP_HOST]?><?=$_SERVER[REQUEST_URI]?>&hl=<?=$ogtitre?>" class="social-icon si-small si-borderless si-gplus">
+							<a href="https://plus.google.com/share?url=<?=$_SERVER[HTTP_HOST]?><?=$_SERVER[REQUEST_URI]?>&hl=<?=$ogtitre?>" target="_blank" class="social-icon si-small si-borderless si-gplus">
 								<i class="icon-gplus"></i>
 								<i class="icon-gplus"></i>
 							</a>
 
-							<a href="https://pinterest.com/pin/create/button/?url=<?=$_SERVER[HTTP_HOST]?><?=$_SERVER[REQUEST_URI]?>&media=<?=$ogimg?>&description=<?=$ogtitre?>" class="social-icon si-small si-borderless si-pinterest">
+							<a href="https://pinterest.com/pin/create/button/?url=<?=$_SERVER[HTTP_HOST]?><?=$_SERVER[REQUEST_URI]?>&media=<?=$ogimg?>&description=<?=$ogtitre?>" target="_blank" class="social-icon si-small si-borderless si-pinterest">
 								<i class="icon-pinterest"></i>
 								<i class="icon-pinterest"></i>
 							</a>
 
-							<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?=$_SERVER[HTTP_HOST]?><?=$_SERVER[REQUEST_URI]?>&title=<?=$ogtitre?>" class="social-icon si-small si-borderless si-linkedin">
+							<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?=$_SERVER[HTTP_HOST]?><?=$_SERVER[REQUEST_URI]?>&title=<?=$ogtitre?>" target="_blank" class="social-icon si-small si-borderless si-linkedin">
 								<i class="icon-linkedin"></i>
 								<i class="icon-linkedin"></i>
 							</a>
@@ -307,16 +309,16 @@
 
 		$('#google-map').gMap({
 
-			address: 'Boulevard+Industriel+86,+7700+Mouscron,+Belgique',
+			address: 'Rue+du+Nouveau+Monde+106,+7700+Mouscron,+Belgique',
 			
 			maptype: 'ROADMAP',
 			zoom: 14,
 			markers: [
 				{
-					address: "Boulevard+Industriel+86,+7700+Mouscron,+Belgique",
-					html: '<div style="width: 300px;"><h4 style="margin-bottom: 8px;">MSS<span>Mouscron</span></h4><p class="nobottommargin"><strong>Centre de repassage</strong><br />Boulevard Industriel 86, 7700 Mouscron<br /><strong>056 33 51 10</strong>.</p></div>',
+					address: "Rue+du+Nouveau+Monde+106,+7700+Mouscron,+Belgique",
+					html: '<div style="width: 300px;"><h4 style="margin-bottom: 8px;">Ambulances <span>DHM</span></h4><p class="nobottommargin">Rue du Nouveau Monde 106, 7700 Mouscron<br /><strong>056 345 411</strong>.</p></div>',
 					icon: {
-						image: "images/icons/map-icon-red.png",
+						image: "images/icons/map-icon.png",
 						iconsize: [32, 39],
 						iconanchor: [13,39]
 					}

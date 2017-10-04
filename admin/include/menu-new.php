@@ -102,7 +102,7 @@ while (list($key, $val) = each($_COOKIE)) {$$key=$val;}
 		        <li <?php  if (strpos($url,'actus.php') !== false) { echo 'class="active"'; } ?> ><a href="blog.php">Actualités </a></li>
 		        <li <?php  if (strpos($url,'produits.php') !== false) { echo 'class="active"'; } ?>><a href="diapo.php">Diapo accueil</a></li>
 		        
-		        <li <?php  if (strpos($url,'produits.php') !== false) { echo 'class="active"'; } ?>><a href="equipe.php">L'Equipe</a></li>
+		        <li <?php  if (strpos($url,'produits.php') !== false) { echo 'class="active"'; } ?>><a href="equipe.php">Membres équipe</a></li>
 		        
 		        
 		        <li class="dropdown">

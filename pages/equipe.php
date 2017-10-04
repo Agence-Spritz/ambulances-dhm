@@ -5,120 +5,157 @@
 	$titred = preg_replace('/##PRIXTITRE##/',$prixtitre,trim($titred));
 	$titred = preg_replace('/##PRIXTITRE2##/',$prixtitre2,trim($titred));
 ?>
-		<!-- Page Title
+
+	<!-- Page Title
+	============================================= -->
+	<section id="page-title" class="page-title-dark" style="position: relative; background-image: url('images/pages-ambulance-mouscron-transport-hopital/<?=$id?>.jpg');  background-size: cover; background-position: center center;">
+	<div class="banner-overlay"></div>
+		<div class="container clearfix "  >
+			
+			<h1><?php echo $titrep; ?></h1>
+			<span><?php echo $texte2p; ?></span>
+			<ol class="breadcrumb">
+				<li><a href="<?php echo $defaultpg; ?>.php">Accueil</a></li>
+				<li class="active"><?php echo $titrep; ?></li>
+			</ol>
+		</div>
+
+	</section><!-- #page-title end -->
+		
+		<!-- Content
 		============================================= -->
-		<section id="page-title" class=" page-title-dark" style="min-height:390px; margin-top:-20px; padding: 60px 0; background-image: url('images/pages-ambulance-mouscron-transport-hopital/<?=$id?>.jpg'); background-size: cover; background-position: center center;">
-			<div class="container clearfix">
-				<h1 style="font-family:'Shadows Into Light'" align="center"><?=$titrep?></h1>
-                <h1 align="center"><i class="fa fa-phone"></i> 056 33 51 10</h1>
-				<?php if ($id>=3 && $id<=5) {?><div align="center"><br /><img src="images/label.png"></div><?php } ?>
-			</div>
-		</section>
+		<section id="content">
 
-                              
-		<div class="section" style="margin-top:-50px; margin-bottom:-50px;" align="justify">
-				<h4 class="uppercase center"><?=$titrep?></h4>
+			<div class="content-wrap">
+				
+				<div class="container clearfix">
 
-				<div class="fslider testimonial testimonial-full" data-animation="fade" data-arrows="false">
-						<div class="flexslider">
-							<div class="slider-wrap">
-								<div class="slide">
-									<div class="">
-										<?=$texte2p?><?=$textep?>
-									</div>
+					<div class="bottommargin">
+
+						<div class="heading-block fancy-title nobottomborder title-bottom-border">
+							<h4>Découvrez notre <span>équipe</span></h4>
+						</div>
+
+						<p><?php echo $textep; ?></p>
+
+					</div>
+
+				</div>
+				
+				<div class="container clearfix">
+					
+					<!-- L'équipe ambulanciers
+					============================================= -->
+					
+					<div class="fancy-title title-border">
+						<h3>L'équipe ambulanciers</h3>
+					</div>
+
+					<div class="row">
+						
+						<?php $req = mysqli_query($link,"SELECT ID, titre, dbu, rub, texte, texte2 FROM ".$table_prefix."_pages WHERE page='equipe' AND rub = 'Ambulanciers' AND masquer <> '1' ORDER BY ID ASC "); 
+						 	while ($data = mysqli_fetch_array($req)) {
+				  		?>
+
+						<div class="col-md-3 col-sm-6 bottommargin">
+
+							<div class="team">
+								<div class="team-image">
+									<?php if (is_file('./images/team/'.$data['ID'].'.jpg')) { ?>
+										<img src="<?php echo './images/team/'.$data['ID'].'.jpg'; ?>" title="<?php echo $data['titre']; ?>" alt="<?php echo $data['titre']; ?>">
+									<?php } else { ?>
+										<img alt="" class="img-responsive" src="./images/photo-replace.jpg">
+									<?php } ?>
+								</div>
+								<div class="team-desc">
+									<div class="team-title"><h4><?php echo $data['titre']; ?></h4><span><?php echo $data['texte2']; ?></span></div>
 								</div>
 							</div>
+
 						</div>
-				</div>
-		</div>
-        
-        <!-- Form Recrutement
-		============================================= -->
-		<?php if ($id==6) {?><section id="content">
-			<div class="content-wrap">
-				<div class="container clearfix">
-					<!-- FORMULAIRE
+						
+						<?php } ?>
+						
+					</div>
+
+					<div class="clear"></div>
+					
+					<!-- L'équipe Nursing
 					============================================= -->
-					<div class="postcontent nobottommargin">
+					
+					<div class="fancy-title title-border">
+						<h3>L'équipe Nursing</h3>
+					</div>
 
-						<h3>Formulaire de recrutement</h3>
+					<div class="row">
+						
+						<?php $req = mysqli_query($link,"SELECT ID, titre, dbu, rub, texte, texte2 FROM ".$table_prefix."_pages WHERE page='equipe' AND rub = 'Nursing' AND masquer <> '1' ORDER BY ID ASC "); 
+						 	while ($data = mysqli_fetch_array($req)) {
+				  		?>
 
-						<div class="contact-widget">
+						<div class="col-md-3 col-sm-6 bottommargin">
 
-							<div class="contact-form-result"></div>
-
-							<form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail2.php" method="post">
-
-								<div class="form-process"></div>
-
-								<div class="col_one_third">
-									<label for="template-contactform-name">Nom, pr&Eacute;nom <small>*</small></label>
-									<input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
+							<div class="team">
+								<div class="team-image">
+									<?php if (is_file('./images/team/'.$data['ID'].'.jpg')) { ?>
+										<img src="<?php echo './images/team/'.$data['ID'].'.jpg'; ?>" title="<?php echo $data['titre']; ?>" alt="<?php echo $data['titre']; ?>">
+									<?php } else { ?>
+										<img alt="" class="img-responsive" src="./images/photo-replace.jpg">
+									<?php } ?>
 								</div>
-
-								<div class="col_one_third">
-									<label for="template-contactform-email">Email <small>*</small></label>
-									<input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
+								<div class="team-desc">
+									<div class="team-title"><h4><?php echo $data['titre']; ?></h4><span><?php echo $data['texte2']; ?></span></div>
 								</div>
+							</div>
 
-								<div class="col_one_third col_last">
-									<label for="template-contactform-phone">T&eacute;l&eacute;phone </label>
-									<input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control required" />
-								</div>
-
-								<div class="clear"></div>
-
-								<div class="col_one_third">
-									<label for="template-contactform-subject">Ville <small>*</small></label>
-									<input type="text" id="template-contactform-subject" name="template-contactform-subject" value="" class="required sm-form-control" />
-								</div>
-
-								<div class="clear"></div>
-
-								<div class="col_full">
-									<label for="template-contactform-ref">R&eacute;f&eacute;rences <small>*</small></label>
-									<textarea class="required sm-form-control" id="template-contactform-ref" name="template-contactform-ref" rows="3" cols="30"></textarea>
-								</div>
-                                
-								<div class="col_full">
-									<label for="template-contactform-exp">Exp&eacute;riences <small>*</small></label>
-									<textarea class="required sm-form-control" id="template-contactform-exp" name="template-contactform-exp" rows="3" cols="30"></textarea>
-								</div>
-                                
-								<div class="col_full">
-									<label for="template-contactform-message">Remarques <small>*</small></label>
-									<textarea class="sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="3" cols="30"></textarea>
-								</div>
-
-								<!--<div class="col_full hidden">
-									<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
-								</div>-->
-
-								<div class="col_full">
-									<button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Envoyer</button>
-								</div>
-
-							</form>
 						</div>
+						
+						<?php } ?>
+						
+					</div>
 
-					</div><!-- .postcontent end -->
-
-					<!-- COORDONNEES
+					
+					<div class="clear"></div>
+					
+					<!-- L'équipe administrative
 					============================================= -->
-					<div class="nobottommargin" style="clear:both; width:100%">
-						<address>
-							<?=$coordonnees?>
-						</address>
-					</div><!-- .sidebar end -->
+					
+					<div class="fancy-title title-border">
+						<h3>L'équipe administrative</h3>
+					</div>
 
+					<div class="row">
+						
+						<?php $req = mysqli_query($link,"SELECT ID, titre, dbu, rub, texte, texte2 FROM ".$table_prefix."_pages WHERE page='equipe' AND rub = 'Administrative' AND masquer <> '1' ORDER BY ID ASC "); 
+						 	while ($data = mysqli_fetch_array($req)) {
+				  		?>
+
+						<div class="col-md-3 col-sm-6 bottommargin">
+
+							<div class="team">
+								<div class="team-image">
+									<?php if (is_file('./images/team/'.$data['ID'].'.jpg')) { ?>
+										<img src="<?php echo './images/team/'.$data['ID'].'.jpg'; ?>" title="<?php echo $data['titre']; ?>" alt="<?php echo $data['titre']; ?>">
+									<?php } else { ?>
+										<img alt="" class="img-responsive" src="./images/photo-replace.jpg">
+									<?php } ?>
+								</div>
+								<div class="team-desc">
+									<div class="team-title"><h4><?php echo $data['titre']; ?></h4><span><?php echo $data['texte2']; ?></span></div>
+								</div>
+							</div>
+
+						</div>
+						
+						<?php } ?>
+						
+					</div>
+					
+					<div class="clear"></div>
+					
 				</div>
 
 			</div>
 
-		</section>
-<?php } ?>
-                
-
-
-            
-			
+		</section><!-- #content end -->
+	

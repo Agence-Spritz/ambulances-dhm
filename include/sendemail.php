@@ -5,7 +5,7 @@ list($mail1) = mysqli_fetch_array(mysqli_query($link, "SELECT mail1 FROM ".$tabl
 		$name = isset( $_POST['template-contactform-name'] ) ? $_POST['template-contactform-name'] : '';
 		$email = isset( $_POST['template-contactform-email'] ) ? $_POST['template-contactform-email'] : '';
 		$phone = isset( $_POST['template-contactform-phone'] ) ? $_POST['template-contactform-phone'] : '';
-		$service = isset( $_POST['template-contactform-service'] ) ? $_POST['template-contactform-service'] : '';
+		//$service = isset( $_POST['template-contactform-service'] ) ? $_POST['template-contactform-service'] : '';
 		$subject = isset( $_POST['template-contactform-subject'] ) ? $_POST['template-contactform-subject'] : '';
 		$message = isset( $_POST['template-contactform-message'] ) ? $_POST['template-contactform-message'] : '';
 		
@@ -14,7 +14,7 @@ if ($name && $email && $phone && $message) {
 	$dbu=date('Y-m-d H:i:s');
 	$IP_exp=$_SERVER["REMOTE_ADDR"];  
 	mysqli_query($link, "INSERT INTO ".$table_prefix."_contact ( `ID` , `nom` , `dbu` , `message` )
-			VALUES (NULL , '$name - $mail', '$dbu', '<b>$subject</b><br /><br />Email : $email<br />Tel : $phone<br /Service : >$service<br /><br />Message : $message<br /><br />Cet email a été expédié à : $to Par $IP_exp') ");
+			VALUES (NULL , '$name - $mail', '$dbu', '<b>$subject</b><br /><br />Email : $email<br />Tel : $phone<br /><br />Message : $message<br /><br />Cet email a été expédié à : $to Par $IP_exp') ");
 }
 require_once('phpmailer/PHPMailerAutoload.php');
 
@@ -37,7 +37,7 @@ $mail = new PHPMailer();
 $name=preg_replace("/'/","`",trim($name));
 $email=preg_replace("/'/","`",trim($email));
 $phone=preg_replace("/'/","`",trim($phone));
-$service=preg_replace("/'/","`",trim($service));
+//$service=preg_replace("/'/","`",trim($service));
 $subject=preg_replace("/'/","`",trim($subject));
 $message=preg_replace("/'/","`",trim($message));
 
@@ -45,7 +45,7 @@ $message=preg_replace("/'/","`",trim($message));
 if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	if( $_POST['template-contactform-email'] != '' ) {
 
-		$subject = isset($subject) ? $subject : 'Contact du site Mss Mouscron';
+		$subject = isset($subject) ? $subject : 'Contact du site Ambulances DHM';
 
 		$botcheck = $_POST['template-contactform-botcheck'];
 
@@ -56,17 +56,17 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			foreach( $toemails as $toemail ) {
 				$mail->AddAddress( $toemail['email'] , $toemail['name'] );
 			}
-			$mail->Subject = "Contact Mss site: ". utf8_decode($subject);
+			$mail->Subject = "Contact Ambulances DHM: ". utf8_decode($subject);
 
 			$name = isset($name) ? "Nom: $name<br><br>" : '';
 			$email = isset($email) ? "Email: $email<br><br>" : '';
 			$phone = isset($phone) ? "Tel: $phone<br><br>" : '';
-			$service = isset($service) ? "Service: $service<br><br>" : '';
+			//$service = isset($service) ? "Service: $service<br><br>" : '';
 			$message = isset($message) ? "Message: $message<br><br>" : '';
 
 			$referrer = $_SERVER['HTTP_REFERER'] ? '<br><br><br>Envoy&eacute; depuis: ' . $_SERVER['HTTP_REFERER'] : '';
 
-			$body = utf8_decode("$name $email $phone $service $message $referrer");
+			$body = utf8_decode("$name $email $phone $message $referrer");
 			
 			// Runs only when File Field is present in the Contact Form
 			if ( isset( $_FILES['template-contactform-file'] ) && $_FILES['template-contactform-file']['error'] == UPLOAD_ERR_OK ) {

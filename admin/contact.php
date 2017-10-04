@@ -6,7 +6,7 @@ $titrepage= "Contacts du site";
 $tableencours = $table_prefix."_contact";
 
 // CHAMPS
-$chps=array('prenom','nom','email','dbu','message','ville','tel');
+$chps=array('nom','email','dbu','message','messagefourn','paiement_info');
 $chpsNb = count($chps);
 
 ?>
@@ -57,7 +57,7 @@ if ( $Submit )
 
 	  	$msg.= "<i class='fa fa-check-circle fa-2x'></i> Enregistrement ajout&eacute;";
     }
-	unset($ID,$prenom,$nom,$email,$dbu,$message,$ville,$tel);
+	unset($ID,$nom,$email,$dbu,$message,$messagefourn);
 
 	
 } // FIN DU SUBMIT
@@ -65,8 +65,8 @@ if ( $Submit )
 // RECUPERATION DES VALEURS ENREGISTREES
 if ( $modif ) 
 {	$result = mysqli_fetch_array( mysqli_query($link, " SELECT ID,$liste1 FROM $tableencours WHERE ID=$modif ") );
-	list($ID,$prenom,$nom,$email,$dbu,$message,$ville,$tel) = $result;
-	$$chps[3]=date_barre($$chps[3]);
+	list($ID,$nom,$email,$dbu,$message,$messagefourn) = $result;
+	$$chps[2]=date_barre($$chps[2]);
 }  
 ?>
 		<!-- Messages d'alertes ou de confirmation -->
@@ -105,34 +105,22 @@ if ( $modif )
 							        } else { echo '<input type="hidden" name="lg" value="'.$langues[0].'">';}
 							        ?>
 							        
-							        <h4><i class='fa fa-user '></i> Prénom </h4>
+							        <h4><i class='fa fa-user '></i> Nom </h4>
 							        <div class="form-group">
 								        <input name="<?=$chps[0]?>" value="<?=$$chps[0]?>" class="form-control" type="text" required  />
 							        </div>
 							        
-							        <h4><i class='fa fa-user'></i> Nom </h4>
+							        
+							        <h4><i class='fa fa-envelope-o '></i> Email</h4>
 							        <div class="form-group">
 								        <input name="<?=$chps[1]?>" value="<?=$$chps[1]?>" class="form-control" type="text" required  />
 							        </div>
 							        
-							        <h4><i class='fa fa-envelope-o '></i> Email</h4>
-							        <div class="form-group">
-								        <input name="<?=$chps[2]?>" value="<?=$$chps[2]?>" class="form-control" type="text" required  />
-							        </div>
 							        
-							        <h4><i class='fa fa-home '></i> Ville </h4>
-							        <div class="form-group">
-								        <input name="<?=$chps[5]?>" value="<?=$$chps[5]?>" class="form-control" type="text" required  />
-							        </div>
-							        
-							        <h4><i class='fa fa-phone '></i> Téléphone </h4>
-							        <div class="form-group">
-								        <input name="<?=$chps[6]?>" value="<?=$$chps[6]?>" class="form-control" type="text" required  />
-							        </div>
 							        
 							        <h4><i class='fa fa-calendar '></i> Date</h4>
 							        <div class="form-group">
-								        <input name="<?=$chps[3]?>" value="<?=($$chps[3])?($$chps[3]):(date("d/m/Y"))?>" class="form-control" type="text" required  />
+								        <input name="<?=$chps[2]?>" value="<?=($$chps[2])?($$chps[2]):(date("d/m/Y"))?>" class="form-control" type="text" required  />
 							        </div>
 							        
 							</div>
@@ -144,7 +132,7 @@ if ( $modif )
 						    <div class="col-sm-12 col-md-12 texte-principal">
 					    
 						      <h4><i class='fa fa-align-justify '></i> Message</h4>
-						      <textarea name="<?=$chps[4]?>" row contenu-admins="10" cols="50" ><?=$$chps[4]?></textarea><script type="text/javascript">CKEDITOR.replace( '<?=$chps[4]?>' );</script>
+						      <textarea name="<?=$chps[3]?>" row contenu-admins="10" cols="50" ><?=$$chps[3]?></textarea><script type="text/javascript">CKEDITOR.replace( '<?=$chps[4]?>' );</script>
 						      <div class="clearfix"></div>
 						      <button type="submit" name="Submit" value="Enregistrer" class="btn btn-default bouton-submit">Enregistrer</button>
 						      
@@ -199,7 +187,7 @@ if ( $modif )
 					      	</thead>
 							<tbody>
 							  	<?php 
-								  while ( list($ID,$prenom,$nom,$email,$dbu,$message,$ville,$tel) = mysqli_fetch_array($result) ) 
+								  while ( list($ID,$nom,$email,$dbu,$message,$messagefourn) = mysqli_fetch_array($result) ) 
 								  { 
 								  	if ($masquer=="1") {$class="normalgrisclair";} else {$class="";}
 								    echo "<tr class='".$class."'>";

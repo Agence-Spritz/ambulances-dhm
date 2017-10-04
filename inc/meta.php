@@ -30,7 +30,7 @@ $ogdescr='Mouscron Ambulance - Ambulances DHM - Transport de malades à Mouscron
   	$Q = mysqli_query($link, "SELECT ID,titre,texte,rub FROM $table WHERE ID='$id'");
   	list($IDmeta,$titremeta,$textemeta,$rubmeta) = mysqli_fetch_array($Q);
 	$textemeta=strip_tags($textemeta);
-	$titre=$titremeta.", ".strip_tags($rubmeta);
+	$titre=$titremeta;
 	$description=substr($textemeta,0,250);
 	$keywords=motcle($titremeta).",".motcle($description);
   	$ogimg='http://'.$_SERVER[HTTP_HOST].dirname($_SERVER["PHP_SELF"]).'/images/pages-ambulance-mouscron-transport-hopital/'.$IDmeta.'.jpg';
@@ -38,6 +38,38 @@ $ogdescr='Mouscron Ambulance - Ambulances DHM - Transport de malades à Mouscron
 	$ogdescr=$description;
   } 
   
+  // METAS SPECIAUX PAGES
+  
+  // pages de détail des actus
+  if (is_numeric($id)>0 && $pg=='detail-actu')
+  {	$table = $table_prefix."_pages"; 
+  	$Q = mysqli_query($link, "SELECT ID,titre,texte,rub FROM $table WHERE ID='$id'");
+  	list($IDmeta,$titremeta,$textemeta,$rubmeta) = mysqli_fetch_array($Q);
+	$textemeta=strip_tags($textemeta);
+	$titre=$titremeta;
+	$description=substr($textemeta,0,250);
+	$keywords=motcle($titremeta).",".motcle($description);
+  	$ogimg='http://'.$_SERVER[HTTP_HOST].dirname($_SERVER["PHP_SELF"]).'/images/pages-ambulance-mouscron-transport-hopital/'.$IDmeta.'.jpg';
+	$ogtitre=$ogtitre.": ".$titremeta;
+	$ogdescr=$description;
+  } 
+  
+   // Pages de prise en charge
+    if (is_numeric($id)>0 && $pg=='prise-en-charge')
+  {	$table = $table_prefix."_pages"; 
+  	$Q = mysqli_query($link, "SELECT ID,titre,texte FROM $table WHERE ID='$id'");
+  	list($IDmeta,$titremeta,$textemeta) = mysqli_fetch_array($Q);
+	$textemeta=strip_tags($textemeta);
+	$titre="Prise en charge - ".strtolower($titremeta);
+	$description=substr($textemeta,0,250);
+	$keywords=motcle($titremeta).",".motcle($description);
+  	$ogimg='http://'.$_SERVER[HTTP_HOST].dirname($_SERVER["PHP_SELF"]).'/images/pages-ambulance-mouscron-transport-hopital/'.$IDmeta.'.jpg';
+	$ogtitre=$ogtitre.": ".$titremeta;
+	$ogdescr=$description;
+  } 
+  
+  
+  // Toutes les pages
     if (is_numeric($id)>0 && $pg=='page')
   {	$table = $table_prefix."_pages"; 
   	$Q = mysqli_query($link, "SELECT ID,titre,texte FROM $table WHERE ID='$id'");

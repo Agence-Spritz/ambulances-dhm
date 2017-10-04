@@ -25,22 +25,15 @@ $masquervignette=0;
 // Nombre de photo dispo
 $nbr=0;
 
+
 // Si on veut desactiver la possibilité de mettre une rubrique
 // 1 = désactivé - 0 = actif
-$masquer_rubrique = 1;
-
-// Cas d'une rubrique imposée
-// 1 = oui - 0 = non
-$rubrique_forcee = 1;
-
-// Adapter si rubrique imposée
-$nom_rubrique_forcee = "Membre équipe";
+$masquer_rubrique = 0;
 
 // CHAMPS
 // A personnaliser si la table que l'on interroge a des champs différents, ou si on veut en ajouter.
-$chps=array('page','titre','texte','dbu','masquer','lg','rub');
+$chps=array('page','titre','texte','dbu','masquer','lg', 'rub', 'texte2');
 $chpsNb = count($chps);
-
  
 ?>
 
@@ -57,19 +50,18 @@ $chpsNb = count($chps);
 	    </div>
     </section>
 <?php    
-	
 // EFFACEMENT
 if ( $del ) {	
 	mysqli_query($link,"DELETE FROM $tableencours WHERE ID=$del");
-	@unlink($chemin.$del.".pdf");
-	for ($a=1; $a<=$nbr; $a++){@unlink($chemin.$del."-".$a.".pdf");}
+	@unlink($chemin.$del.".jpg");
+	for ($a=1; $a<=$nbr; $a++){@unlink($chemin.$del."-".$a.".jpg");}
 }
 elseif ($delphoto) {@unlink($chemin.$delphoto);}
 unset ($del,$delphoto);
 
 	
 // TRAITEMENT DES TEXTES
-if ($rubnew) {$$chps[3]=$rubnew;}
+if ($rubnew) {$$chps[6]=$rubnew;}
 if (!$dbu) {$dbu=date(Y-m-d);} else {$dbu=date_tiret($dbu);}
 for ($a=0; $a<$chpsNb; $a++){ 
 	$$chps[$a]=preg_replace('/"/',"'",trim($$chps[$a]));							// " => '
@@ -85,20 +77,19 @@ $liste1 = substr($liste1,0,strlen($liste1)-1); //echo $liste1;
 if ( $Submit ) 
 {	if ( $modif ) 
 	{	mysqli_query($link,"UPDATE $tableencours SET $addquery1 WHERE ID='$modif'");
-		if ( $vignette ) { $updatevign="$modif.pdf"; }
-		for ($a=1; $a<=$nbr; $a++){		if ( $_FILES['photo'.$a]['name'] ) { $updatefile[$a]=$modif."-".$a.".pdf";} else {$updatefile[$a]="";} }
+		if ( $vignette ) { $updatevign="$modif.jpg"; }
+		for ($a=1; $a<=$nbr; $a++){		if ( $_FILES['photo'.$a]['name'] ) { $updatefile[$a]=$modif."-".$a.".jpg";} else {$updatefile[$a]="";} }
 		$msg.= "<i class='fa fa-check-circle fa-2x'></i> Mise &agrave; jour r&eacute;ussie";
     } 
 	else 
 	{	mysqli_query($link,"INSERT INTO $tableencours SET $addquery1");
-		if ( $vignette ) 	{ $updatevign= mysqli_insert_id($link).".pdf"; }
-		for ($a=1; $a<=$nbr; $a++){	if ( $_FILES['photo'.$a] ) { $updatefile[$a]=mysqli_insert_id($link)."-".$a.".pdf"; } }
+		if ( $vignette ) 	{ $updatevign= mysqli_insert_id($link).".jpg"; }
+		for ($a=1; $a<=$nbr; $a++){	if ( $_FILES['photo'.$a] ) { $updatefile[$a]=mysqli_insert_id($link)."-".$a.".jpg"; } }
 	  	$msg.= "<i class='fa fa-check-circle fa-2x'></i> Enregistrement ajout&eacute;";
     }
     
-    
     // Si on a ajouté des champs, il faudra les ajouter ici aussi !
-	unset($ID,$page,$titre,$produit,$rub,$dbu,$masquer,$lg);
+	unset($ID,$page,$titre,$texte,$dbu,$masquer,$lg, $rub, $texte2);
 
 	// ENVOYER LES PHOTOS
 	$nom_tmp = $_FILES['vignette']['tmp_name']; sent_photo($updatevign,$nom_tmp,$chemin); 
@@ -110,14 +101,17 @@ if ( $Submit )
 		if ($w >$redim_w || $h>$redim_h) { 
 			redimage("$chemin$updatevign","$chemin$updatevign","$redim_w","$redim_h");
 		}
+		//filigrane("$chemin$updatevign","img/filigrane.png");
 	}
 	
 	for ($a=1; $a<=$nbr; $a++){
 		if (file_exists($chemin.$updatefile[$a]) && $updatefile[$a] ) {		
 			list($w,$h) = getimagesize($chemin.$updatefile[$a]) ;		
 			redimage("$chemin$updatefile[$a]","$chemin$updatefile[$a]","$redim_w","$redim_h") ;
+			//filigrane("$chemin$updatefile[$a]","img/filigrane.png");	/* IMPRESSION DU FILIGRANE*/
 		}
 	}
+	
 			
 	
 } // FIN DU SUBMIT
@@ -128,8 +122,8 @@ if ( $modif )
 
 	// Si on a ajouté des champs, il faudra les ajouter ici aussi !
 	
-	list($ID,$page,$titre,$produit,$rub,$dbu,$masquer,$lg) = $result;
-	$$chps[4]=date_barre($$chps[4]);
+	list($ID,$page,$titre,$texte,$dbu,$masquer,$lg, $rub, $texte2 ) = $result;
+	$$chps[3]=date_barre($$chps[3]);
 }  
 ?>
 			<!-- Messages d'alertes ou de confirmation -->
@@ -170,106 +164,91 @@ if ( $modif )
 				        } else { echo '<input type="hidden" name="lg" value="'.$langues[0].'">';}
 				        ?>
 
-						<h4><i class='fa fa-pencil-square-o '></i> Titre</h4>
+						<h4><i class='fa fa-pencil-square-o '></i> Prénom</h4>
 				        <div class="form-group">
 					        <input name="<?=$chps[1]?>" value="<?=$$chps[1]?>" class="form-control" type="text" required  />
 				        </div>
 				        
-				        	<h4><i class='fa fa-plus-square fa-1x'></i> Produit de rattachement</h4>
-					        <div class="form-group">   
-					          	<select name="<?=$chps[2]?>" class="form-control">
-					             <?
-						            $result = mysqli_query($link, "SELECT id, titre, lg FROM ".$table_prefix."_pages WHERE page='produit' ORDER BY titre") ;
-						          
-						            while ( $data = mysqli_fetch_array($result) ) 
-						            {	echo " <option value=".$data['id']."";
-						                if ( $data['id']==$$chps[2] ) { print(" selected"); } 
-						                echo " >".$data['titre']."-".$data['lg']."</option>";
-						            }		?>
-								</select>
-					        </div>
-
-							<?php // Possibilité de renseigner une rubrique 
+				        <h4><i class='fa fa-pencil-square-o '></i> Description</h4>
+				        <div class="form-group">
+					        <input name="<?=$chps[7]?>" value="<?=$$chps[7]?>" class="form-control" type="text" required  />
+				        </div>
+				        
+						<?php // Possibilité de renseigner une rubrique 
 					        if ($masquer_rubrique!="1") {
-				        	?>
+				        ?>
 				        	<h4><i class='fa fa-plus-square fa-1x'></i> Rubrique</h4>
 					        <div class="form-group">   
-					          	<select name="<?=$chps[3]?>" class="form-control">
+					          	<select name="<?=$chps[6]?>" class="form-control">
 					             <?
-						            $result = mysqli_query($link, "SELECT rub FROM $tableencours WHERE page='".$lapage."' GROUP BY rub ORDER BY rub") ;
+						            $result = mysqli_query($link, "SELECT rub FROM $tableencours WHERE page='equipe' GROUP BY rub ORDER BY rub") ;
 						          
 						            while ( list($list) = mysqli_fetch_array($result) ) 
 						            {	echo " <option value=\"$list\" ";
-						                if ( $list==$$chps[3] ) { print(" selected"); } 
+						                if ( $list==$$chps[6] ) { print(" selected"); } 
 						                echo " >".$list."</option>";
 						            }		?>
 								</select>
 					        </div>
 					        <div class="form-group">
-						        <label> Ou nouvelle rubrique <span style="font-weight: normal; font-size: 10px;">(attention à ne pas créer une rubrique deja existante)</span></label>
+						        <label> Ou nouvelle rubrique</label>
 						        <input class="form-control" name="rubnew" type="text" />
 					        </div>
-					        <?php } ?>
-
-							<?php // Possibilité de renseigner une rubrique 
-					         if ($rubrique_forcee=="1") {
-				        	?>
-							<!-- Si rubrique forcée -->
-							<input type="hidden" name="<?=$chps[3]?>" value="<?php echo $nom_rubrique_forcee; ?>" />
-							<?php } ?>
-							
-					        
-					        <h4><i class='fa fa-calendar '></i> Date de tri</h4>
-					        <div class="form-group">
-						    	<input name="<?=$chps[4]?>" value="<?=($$chps[4])?($$chps[4]):(date("d/m/Y"))?>" class="form-control" type="text" required size="30" />
-						    </div>
-					        
 				        
-							<h4><i class='fa fa-eye '></i> Masquer</h4>
-						    <div class="form-group">
-					          <select name="<?=$chps[5]?>" class="form-control">
-					            <option value="0"<?php if ( $$chps[5]=="0" ) { print(" selected"); } ?>>Non</option>
-					            <option value="1"<?php if ( $$chps[5]=="1" ) { print(" selected"); } ?>>Oui</option>
-					          </select>
-					        </div>
+				        <?php } ?>
+				
+						<h4><i class='fa fa-eye '></i> Masquer</h4>
+					    <div class="form-group">
+				          <select name="<?=$chps[4]?>" class="form-control">
+				            <option value="0"<?php if ( $$chps[4]=="0" ) { print(" selected"); } ?>>Non</option>
+				            <option value="1"<?php if ( $$chps[4]=="1" ) { print(" selected"); } ?>>Oui</option>
+				          </select>
+				        </div>
 					</div>
 					
 					<div class="col-sm-12 col-md-6 ">
+						<?php if ($masquervignette!=1) { ?>
+						
 						<div class="zone-photos"> 
 
-						    <?php if ($masquervignette!=1) { ?>
-							    
-							    	 <h4><i class='fa fa-camera '></i> Document (format: .pdf)</h4>
+							    	 <h4><i class='fa fa-camera '></i> Photos (format: .jpg | taille: <?=$photosize?> pixels)</h4>
 							    	 <div class="form-group">
-							         <label>Document</label>
+							         <label>Vignette</label>
 							         	<input type="file" name="vignette"  value="" />
 							         </div>
 									<?
-									 if ( $modif && file_exists($chemin.$modif.".pdf") ) {	
-											redim_img_url($chemin.$modif.".pdf",$wmax,$hmax);
-											print("<a href=?modif=$modif&delphoto=$modif.pdf><i class='fa fa-trash-o '></i></a> photo $a<br/><br/>");
+									 if ( $modif && file_exists($chemin.$modif.".jpg") ) {	
+											redim_img_url($chemin.$modif.".jpg",$wmax,$hmax);
+											print("<a href=?modif=$modif&delphoto=$modif.jpg><i class='fa fa-trash-o '></i></a> photo $a<br/><br/>");
 										}
 									for ($a=1; $a<=$nbr; $a++){ ?>
 										<div class="form-group">
-								        <label>Document <?=$a?></label>
+								        <label>Photo <?=$a?></label>
 									        <input type="file" name="photo<?=$a?>"  value="">
 								        </div>
 							        <?php 
 									} 	
-									//Afficher les documents pdf
+									//Afficher les photos
 									for ($a=1; $a<=$nbr; $a++){
-										if ( $modif && file_exists($chemin.$modif."-".$a.".pdf") ) {	
-											redim_img_url($chemin.$modif."-".$a.".pdf",$wmax,$hmax);
-											print("<a href=?modif=$modif&delphoto=$modif-$a.pdf> <i class='fa fa-trash-o '></i></a> photo $a<br/><br/>");
+										if ( $modif && file_exists($chemin.$modif."-".$a.".jpg") ) {	
+											redim_img_url($chemin.$modif."-".$a.".jpg",$wmax,$hmax);
+											print("<a href=?modif=$modif&delphoto=$modif-$a.jpg> <i class='fa fa-trash-o '></i></a> photo $a<br/><br/>");
 										}
 									} 
 									?>
-						    <?php } ?>
+							    
 						</div>
+						
+						<?php } ?>
 					</div>
 					<div class="clearfix"></div>
 					
 					<div class="col-sm-12 col-md-12 texte-principal">
+	    
+<!--
+				      <h4><i class='fa fa-align-justify '></i> Texte principal</h4>
+				      <textarea name="<?=$chps[2]?>" row contenu-admins="10" cols="50" ><?=$$chps[2]?></textarea><script type="text/javascript">CKEDITOR.replace( '<?=$chps[2]?>' );</script>
+-->
 				      <div class="clearfix"></div>
 				      <button type="submit" name="Submit" value="Enregistrer" class="btn btn-default bouton-submit">Enregistrer</button>
 					</div>
@@ -322,12 +301,12 @@ if ( $modif )
 				      	</thead>
 						<tbody>
 						  <?php 
-						  while ( list($ID,$page,$titre,$produit,$rub,$dbu,$masquer,$lg) = mysqli_fetch_array($result) ) 
+						  while ( list($ID,$page,$titre,$texte,$dbu,$masquer,$lg,$rub, $texte2) = mysqli_fetch_array($result) ) 
 						  { 
 						  	if ($masquer=="1") {$class="normalgrisclair";} else {$class="";}
 						    echo "<tr class='".$class."'>";
 						    echo "<td><a href=\"?modif=$ID&word=$word\"><i class='fa fa-pencil '></i></a></td>";
-						    echo "<td>$ID - $lg</td><td>".$page." <i class='fa fa-angle-right '></i>".$rub."</td><td>".strip_tags($titre)."</td><td>".substr(strip_tags($produit),0,60)."...</td><td>".date_barre($dbu)."</td><td><a href=\"?del=$ID&word=$word\"><i class='fa fa-trash-o '></i></a></td>";
+						    echo "<td>$ID - $lg</td><td>".$page." <i class='fa fa-angle-right '></i>".$rub."</td><td>".strip_tags($titre)."</td><td>".substr(strip_tags($texte2),0,60)."...</td><td>".date_barre($dbu)."</td><td><a href=\"?del=$ID&word=$word\"><i class='fa fa-trash-o '></i></a></td>";
 						    echo "</tr>";
 						  }
 						 ?>
