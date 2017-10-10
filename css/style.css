@@ -1006,7 +1006,7 @@ body.stretched #header.full-header .container {
 	font-family: 'Raleway', sans-serif;
 	font-size: 36px;
 	line-height: 100%;
-	margin-right: 40px;
+	margin-right: 20px;
 }
 
 #header.full-header #logo {
@@ -3048,7 +3048,7 @@ body:not(.stretched) .slider-parallax .slider-parallax-inner { left: auto; }
 }
 
 .slider-caption h2 {
-	font-size: 64px;
+	font-size: 45px;
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -13585,4 +13585,24 @@ color: #fff !important;
 	left: 0;
 	bottom: 0;
 	right: 0; 
+}
+
+
+.content-wrap ul{
+    list-style: none;
+    margin: 0 auto 25px auto;
+}
+
+
+
+.content-wrap li {
+    display: block;
+    padding: 0px 0 0px 20px
+}
+
+.content-wrap li {
+    background: url(../images/icons/widget-link.png) left top no-repeat;
+    border: none !important;
+    color: #444;
+    font-size: 14px
 }

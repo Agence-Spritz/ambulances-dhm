@@ -18,6 +18,11 @@ if($modif=='135') {
 	$masquervignette=1;
 	$nbr=0; // Nombre de photos
 	
+} else if($modif=='133') {
+	
+	$masquervignette=0;
+	$nbr=2; // Nombre de photos
+	
 } else {
 	$masquervignette=0;
 	$nbr=1; // Nombre de photos

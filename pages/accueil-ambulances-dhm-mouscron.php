@@ -87,45 +87,45 @@
             
 		</div>
 		
-		<div class="section dark bottommargin-lg" style="height: 500px;">
+		<div class="section dark topmargin-lg" style="height: 500px;">
 			<div class="container center clearfix vertical-middle">
 				
 				<div class="slider-caption slider-caption-center">
-					<h2 data-animate="fadeInUp">A votre service</h2>
+					<h2 data-animate="fadeInUp">Toute une équipe à votre service</h2>
 				</div>
 
 				<div class="col_one_fourth nobottommargin">
 					<div class="feature-box fbox-center fbox-plain nobottomborder">
-						<div class="fbox-icon">
-							<a href="#"><i class="flaticon-iv-bag" ></i></a>
-						</div>
+							<div class="fbox-icon">
+								<a href="#"><img src="images/icons/service-1.png" alt="Icon" data-animate="zoomIn"></a>
+							</div>
 						<p>Pour les transports urgents de soins intensifs et de réanimation, cette cellule médicalisée est capable d’accueillir toute une équipe médicale (médecin, infirmiers, ambulanciers supplémentaires).</p>
 					</div>
 				</div>
 
 				<div class="col_one_fourth nobottommargin">
 					<div class="feature-box fbox-center fbox-plain nobottomborder">
-						<div class="fbox-icon">
-							<a href="#"><i class="flaticon-bed" ></i></a>
-						</div>
+							<div class="fbox-icon">
+								<a href="#"><img src="images/icons/service-2.png" alt="Icon" data-animate="zoomIn" data-delay="200"></a>
+							</div>
 						<p>Ce service d’ambulance assure les transports non urgents pour personnes nécessitant un brancard.</p>
 					</div>
 				</div>
 
 				<div class="col_one_fourth nobottommargin">
 					<div class="feature-box fbox-center fbox-plain nobottomborder">
-						<div class="fbox-icon">
-							<a href="#"><i class="flaticon-wheelchair-facing-right" ></i></a>
-						</div>
+							<div class="fbox-icon">
+								<a href="#"><img src="images/icons/service-3.png" alt="Icon" data-animate="zoomIn" data-delay="400"></a>
+							</div>
 						<p>Ce type de transport permet aux personnes valides ou à mobilité réduite de se déplacer selon leurs besoins grâce à des véhicules adaptés.</p>
 					</div>
 				</div>
 
 				<div class="col_one_fourth nobottommargin col_last">
 					<div class="feature-box fbox-center fbox-plain nobottomborder">
-						<div class="fbox-icon">
-							<a href="#"><i class="flaticon-medical" ></i></a>
-						</div>
+							<div class="fbox-icon">
+								<a href="#"><img src="images/icons/service-4.png" alt="Icon" data-animate="zoomIn" data-delay="600"></a>
+							</div>
 						<p>En cas d’hospitalisation, la demande de transport peut être faite directement en nous contactant par téléphone.</p>
 					</div>
 				</div>
@@ -139,7 +139,7 @@
 			</div>
 		</div>
 		
-		<div class="section nobg topmargin-lg nobottommargin">
+		<div class="section nobg nobottommargin notopmargin">
 			<div class="container clearfix">
 				
 				<?php $req = mysqli_query($link,"SELECT ID, titre, dbu, rub, texte, texte2 FROM ".$table_prefix."_pages WHERE page='page' AND rub='edito-1' "); 

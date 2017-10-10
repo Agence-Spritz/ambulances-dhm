@@ -608,7 +608,7 @@ body.top-search-open .dark #header-wrap:not(.not-dark) #top-search a,
 
 .dark .feature-box h3 { color: #CCC; }
 
-.dark .feature-box p { color: #888; }
+.dark .feature-box p { color: #fff; }
 
 .dark .feature-box.fbox-light.fbox-outline .fbox-icon { border-color: rgba(255,255,255,0.15); }
 

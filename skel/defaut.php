@@ -82,11 +82,13 @@
             	<!-- Logo slide  -->
                 <div style="position: absolute; margin:30px 0 0 10px; width:100%; z-index:9999">
                 	<a href="<?php echo $defaultpg; ?>.php">
-                    	<img src="images/logo.png" style="">
+                    	<img src="images/logo1.png" style="">
                     </a>
                     	
+<!--
                     <h2 style="font-family:'Lato'; color:#FFF; margin-left:40px; margin-top: 15px; font-size: 30px;">24/24 & 7j/7 - <a class="slider-main" href="tel:+3256345411">056 345 411</a></h2>
                     
+-->
                     
                    
                 </div>
@@ -180,8 +182,8 @@
 					<!-- LOGO
 					============================================= -->
 					<div id="logo">
-						<a href="<?php echo $defaultpg; ?>.php" class="standard-logo" data-dark-logo="images/images/logo-nav.png"><img src="images/logo-nav.png" title="Retour &agrave; l'accueil" alt="<?=$titre?>"></a>
-						<a href="<?php echo $defaultpg; ?>.php" class="retina-logo" data-dark-logo="images/images/logo-nav.png"><img src="images/logo-nav.png" title="Retour &agrave; l'accueil" alt="<?=$titre?>"></a>
+						<a href="<?php echo $defaultpg; ?>.php" class="standard-logo" data-dark-logo="images/images/logo2.png"><img src="images/logo2.png" title="Retour &agrave; l'accueil" alt="<?=$titre?>"></a>
+						<a href="<?php echo $defaultpg; ?>.php" class="retina-logo" data-dark-logo="images/images/logo2.png"><img src="images/logo2.png" title="Retour &agrave; l'accueil" alt="<?=$titre?>"></a>
                     </div>
 
 					<!-- MENU TOP
@@ -202,7 +204,7 @@
 							</li>
 							<li class="<?=($pg=='equipe')?('current'):('')?>"><a href="presentation-equipe-ambulance-mouscron-luingne-herseaux-dottignies--120--equipe"><div><i class="flaticon-users"></i>Equipe</div></a></li>
 							<li class="<?=($pg=='reserver-en-ligne')?('current'):('')?>"><a href="reservation-transport-hopital-mouscron-ambulance--132--reserver-en-ligne"><div><i class="flaticon-route"></i>Réserver</div></a></li>
-							<li class="<?=($pg=='page' && $id=='133')?('current'):('')?>"><a href="qualite-service-transport-hopital--133--page"><div><i class="flaticon-star"></i>Qualité</div></a></li>
+							<li class="<?=($pg=='page' && $id=='133')?('current'):('')?>"><a href="qualite-service-transport-hopital--133--qualite"><div><i class="flaticon-star"></i>Qualité</div></a></li>
                             <li class="<?=($pg=='blog')?('current'):('')?>"><a href="actualites-ambulances-dhm--134--blog"><div><i class="flaticon-edit"></i>Actu</div></a></li>
 							<li class="<?=($pg=='contact')?('current'):('')?>"><a href="contacter-ambulance-mouscron--135--contact"><div><i class="flaticon-placeholder"></i>Contact</div></a></li>
 						</ul>
