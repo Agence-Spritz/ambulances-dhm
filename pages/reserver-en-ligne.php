@@ -28,17 +28,219 @@
 		<div class="content-wrap">
 			
 			<div class="container clearfix">
+				
+				<!-- Postcontent
+					============================================= -->
+					<div class=" bottommargin">
+						
+					<form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail-resa.php" method="post">
 
-				<div class="bottommargin">
 
-					<div class="heading-block fancy-title nobottomborder title-bottom-border">
-						<h4><?php echo $titrep; ?></h4>
-					</div>
+						<h3><?php echo $titrep; ?></h3>
+						
+						<p><?php echo $textep; ?></p>
+						
+						
 
-					<p><?php echo $textep; ?></p>
+						<div class="col_half contact-widget">
+							
+							<div class="fancy-title title-bottom-border">
+								<h4>Vos informations</h4>
+							</div>
+
+							<div class="contact-form-result"></div>
+
+								<div class="form-process"></div>
+
+								<div class="col_one_third">
+									<label for="template-contactform-name">Nom <small>*</small></label>
+									<input type="text" id="visiteur_nom" name="visiteur_nom" value="" class="sm-form-control required" />
+								</div>
+
+								<div class="col_one_third ">
+									<label for="template-contactform-phone">Prénom</label>
+									<input type="text" id="visiteur_prenom" name="visiteur_prenom" value="" class="sm-form-control" />
+								</div>
+								
+								<div class="col_one_third col_last">
+									<label for="template-contactform-email">Email <small>*</small></label>
+									<input type="email" id="visiteur_email" name="visiteur_email" value="" class="required email sm-form-control" />
+								</div>
+
+								<div class="clear"></div>
+
+								<div class="col_half">
+									<label for="template-contactform-subject">Téléphone <small>*</small></label>
+									<input type="text" id="visiteur_tel" name="visiteur_tel" value="" class="required sm-form-control" />
+								</div>
+								<div class="col_half col_last">
+									<label for="template-contactform-subject">Entreprise ou établissement</label>
+									<input type="text" id="visiteur_entreprise" name="visiteur_entreprise" value="" class=" sm-form-control" />
+								</div>
+
+								<div class="clear"></div>
+
+						</div>
+						
+						<div class="col_half col_last contact-widget">
+							
+							<div class="fancy-title title-bottom-border">
+								<h4>La personne à transporter</h4>
+							</div>
+
+							<div class="contact-form-result"></div>
+
+							<div class="form-process"></div>
+
+								<div class="col_half">
+									<label for="transp_nom">Nom <small>*</small></label>
+									<input type="text" id="transp_nom" name="transp_nom" value="" class="sm-form-control required" />
+								</div>
+
+								<div class="col_half col_last">
+									<label for="transp_email">Prénom</label>
+									<input type="text" id="transp_email" name="transp_email" value="" class="sm-form-control" />
+								</div>
+
+								<div class="col_full">
+									<label for="transp_datenaissance">Date de naissance</label>
+									<div class="input-group">
+									<input type="text" id="transp_datenaissance" name="transp_datenaissance" value="" class="sm-form-control tleft past-enabled" placeholder="JJ/MM/AAAA" />
+										<span class="input-group-addon" style="padding: 9px 12px;">
+											<i class="icon-calendar2"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="clear"></div>
+
+						</div>
+						<div class="clear"></div>
+						
+						<div class="col_full contact-widget">
+							
+							<div class="fancy-title title-bottom-border">
+								<h4>Votre réservation</h4>
+							</div>
+
+							<div class="contact-form-result"></div>
+
+								<div class="form-process"></div>
+								
+								<div class="col_half">
+									<label for="res_type">Type de transport <small>*</small></label>
+									<select class="select-1 form-control" name="res_type" id="res_type">
+											<option value="AZ">Arizona</option>
+											<option value="CO">Colorado</option>
+											<option value="ID">Idaho</option>
+											<option value="MT">Montana</option>
+											<option value="NE">Nebraska</option>
+											<option value="NM">New Mexico</option>
+											<option value="ND">North Dakota</option>
+											<option value="UT">Utah</option>
+											<option value="WY">Wyoming</option>
+									</select>
+									
+								</div>
+
+								<div class="col_half col_last">
+									<label for="res_choix">Choix <small>*</small></label>
+									<select class="select-1 form-control" name="res_choix" id="res_choix">
+											<option value="AZ">Arizona</option>
+											<option value="CO">Colorado</option>
+											<option value="ID">Idaho</option>
+									</select>
+								</div>
+								
+								<div class="clear"></div>
+								
+								<div class="col_half">
+									<div class="fancy-title">
+										<h4 style="color: #f5e212;">Aller</h4>
+									</div>
+									
+									<label for="res_adresse_depart">Adresse départ <small>*</small></label>
+									<input type="text" id="res_adresse_depart" name="res_adresse_depart" value="" class="sm-form-control required" />
+									
+								</div>
+
+								<div class="col_half col_last">
+									<div class="fancy-title">
+										<h4 style="color: #f5e212;">Retour</h4>
+									</div>
+									
+									<label for="res_date_depart_retour">Date de départ <small>*</small></label>
+									<div class="input-group">
+									<input type="text" id="res_date_depart_retour" name="res_date_depart_retour" value="" class="required sm-form-control tleft past-enabled" placeholder="JJ/MM/AAAA" />
+										<span class="input-group-addon" style="padding: 9px 12px;">
+											<i class="icon-calendar2"></i>
+										</span>
+									</div>
+								</div>
+								
+								<div class="col_half">
+									<label for="res_adresse_destination">Adresse de destination <small>*</small></label>
+									<input type="text" id="res_adresse_destination" name="res_adresse_destination" value="" class="sm-form-control required" />
+									
+								</div>
+
+								<div class="col_half col_last">
+									<label for="res_heure_depart_retour">Heure de départ <small>*</small></label>
+									<div class="input-group date">
+									<input type="text" id="res_heure_depart_retour" class="tleft sm-form-control datetimepicker1" name="res_heure_depart_retour" value="" placeholder="00:00 AM/PM"/>
+									<span class="input-group-addon">
+											<span class="icon-clock"></span>
+									</span>
+									</div>
+								</div>
+								
+								<div class="col_half">
+									<label for="res_date_depart_aller">Date de départ <small>*</small></label>
+									<div class="input-group">
+									<input type="text" id="res_date_depart_aller" name="res_date_depart_aller" value="" class="sm-form-control required tleft past-enabled" placeholder="JJ/MM/AAAA" />
+										<span class="input-group-addon" style="padding: 9px 12px;">
+											<i class="icon-calendar2"></i>
+										</span>
+									</div>
+									
+									
+								</div>
+								<div class="col_half col_last"></div>
+								
+								<div class="col_half">
+								<label for="res_heure_depart_aller">Heure de départ <small>*</small></label>
+									<div class="input-group date">
+									<input type="text" id="res_heure_depart_aller" class="tleft sm-form-control datetimepicker1" name="res_heure_depart_aller" value="" placeholder="00:00 AM/PM"/>
+									<span class="input-group-addon">
+											<span class="icon-clock"></span>
+									</span>
+									</div>
+								</div>
+								<div class="col_half col_last"></div>
+
+								<div class="clear"></div>
+
+								<div class="col_full">
+									<label for="commentaire">Informations complémentaires</label>
+									<textarea class="sm-form-control" id="commentaire" name="commentaire" rows="6" cols="30"></textarea>
+								</div>
+
+								<div class="col_full">
+										<input id="checkbox-10" class="checkbox-style" name="check_cgv" type="checkbox" >
+										<label for="check_cgv" class="checkbox-style-3-label">J'ai lu et j'accepte les <a href="/images/cgv.pdf" title="Conditions générales de vente">Conditions générales de vente</a></label>
+								</div>
+
+								<div class="col_full">
+									<button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Envoyer</button>
+								</div>
+								
+								
+
+						</div>
+
+					</form>
+					</div><!-- .postcontent end -->
 
 				</div>
-
-			</div>
 		</div>
 	</section>	
