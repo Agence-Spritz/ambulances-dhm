@@ -29,6 +29,20 @@
 	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/settings.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/layers.css">
 	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/navigation.css">
+	
+	<!-- Bootstrap Switch CSS -->
+	<link rel="stylesheet" href="css/components/bs-switches.css" type="text/css" />
+
+	<!-- Radio Checkbox Plugin -->
+	<link rel="stylesheet" href="css/components/radio-checkbox.css" type="text/css" />
+	
+	<!-- Date & Time Picker CSS -->
+	<link rel="stylesheet" href="demos/travel/css/datepicker.css" type="text/css" />
+	<link rel="stylesheet" href="css/components/timepicker.css" type="text/css" />
+	<link rel="stylesheet" href="css/components/daterangepicker.css" type="text/css" />
+	
+	<!-- Select-Boxes CSS -->
+	<link rel="stylesheet" href="css/components/select-boxes.css" type="text/css" />
 
 
 	<style>
@@ -299,6 +313,217 @@
 	<script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
 	<script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
 	<script type="text/javascript" src="include/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
+	
+	<!-- Select-Boxes Plugin -->
+	<script type="text/javascript" src="js/components/select-boxes.js"></script>
+
+	<!-- Select-Splitter Plugin -->
+	<script type="text/javascript" src="js/components/selectsplitter.js"></script>
+	
+	<!-- Date & Time Picker JS -->
+	<script type="text/javascript" src="js/components/moment.js"></script>
+	<script type="text/javascript" src="demos/travel/js/datepicker.js"></script>
+	<script type="text/javascript" src="js/components/timepicker.js"></script>
+
+	<!-- Include Date Range Picker -->
+	<script type="text/javascript" src="js/components/daterangepicker.js"></script>
+	
+	<!-- Bootstrap Switch Plugin -->
+	<script type="text/javascript" src="js/components/bs-switches.js"></script>
+	
+	<script type="text/javascript">
+		
+		//Script select
+		jQuery(document).ready( function($){
+
+			// Multiple Select
+			$(".select-1").select2({
+				placeholder: "Select Multiple Values"
+			});
+
+			// Loading array data
+			var data = [{ id: 0, text: 'enhancement' }, { id: 1, text: 'bug' }, { id: 2, text: 'duplicate' }, { id: 3, text: 'invalid' }, { id: 4, text: 'wontfix' }];
+			$(".select-data-array").select2({
+			  data: data
+			})
+			$(".select-data-array-selected").select2({
+			  data: data
+			});
+
+			// Enabled/Disabled
+			$(".select-disabled").select2();
+			$(".select-enable").on("click", function () {
+				$(".select-disabled").prop("disabled", false);
+				$(".select-disabled-multi").prop("disabled", false);
+			});
+			$(".select-disable").on("click", function () {
+				$(".select-disabled").prop("disabled", true);
+				$(".select-disabled-multi").prop("disabled", true);
+			});
+
+			// Without Search
+			$(".select-hide").select2({
+				minimumResultsForSearch: Infinity
+			});
+
+			// select Tags
+			$(".select-tags").select2({
+				tags: true
+			});
+
+			// Select Splitter
+			$('.selectsplitter').selectsplitter();
+
+		});
+	</script>
+	
+	<script type="text/javascript">
+		
+		// Script datepicker
+		$(function() {
+			$('.travel-date-group .default').datepicker({
+				autoclose: true,
+				startDate: "today",
+			});
+
+			$('.travel-date-group .today').datepicker({
+				autoclose: true,
+				startDate: "today",
+				todayHighlight: true
+			});
+
+			$('.travel-date-group .past-enabled').datepicker({
+				autoclose: true,
+			});
+			$('.travel-date-group .format').datepicker({
+				autoclose: true,
+				format: "dd-mm-yyyy",
+			});
+
+			$('.travel-date-group .autoclose').datepicker();
+
+			$('.travel-date-group .disabled-week').datepicker({
+				autoclose: true,
+				daysOfWeekDisabled: "0"
+			});
+
+			$('.travel-date-group .highlighted-week').datepicker({
+				autoclose: true,
+				daysOfWeekHighlighted: "0"
+			});
+
+			$('.travel-date-group .mnth').datepicker({
+				autoclose: true,
+				minViewMode: 1,
+				format: "mm/yy"
+			});
+
+			$('.travel-date-group .multidate').datepicker({
+				multidate: true,
+				multidateSeparator: " , "
+			});
+
+			$('.travel-date-group .input-daterange').datepicker({
+				autoclose: true
+			});
+
+			$('.travel-date-group .inline-calendar').datepicker();
+
+			$('.datetimepicker').datetimepicker({
+				showClose: true
+			});
+
+			$('.datetimepicker1').datetimepicker({
+				format: 'LT',
+				showClose: true
+			});
+
+			$('.datetimepicker2').datetimepicker({
+				inline: true,
+				sideBySide: true
+			});
+
+		});
+
+		$(function() {
+			// .daterange1
+			$(".daterange1").daterangepicker({
+				"buttonClasses": "button button-rounded button-mini nomargin",
+				"applyClass": "button-color",
+				"cancelClass": "button-light"
+			});
+
+			// .daterange2
+			$(".daterange2").daterangepicker({
+				"opens": "center",
+				timePicker: true,
+				timePickerIncrement: 30,
+				locale: {
+					format: 'MM/DD/YYYY h:mm A'
+				},
+				"buttonClasses": "button button-rounded button-mini nomargin",
+				"applyClass": "button-color",
+				"cancelClass": "button-light"
+			});
+
+			// .daterange3
+			$(".daterange3").daterangepicker({
+				singleDatePicker: true,
+				showDropdowns: true
+			},
+			function(start, end, label) {
+				var years = moment().diff(start, 'years');
+				alert("You are " + years + " years old.");
+			});
+
+			// reportrange
+			function cb(start, end) {
+				$(".reportrange span").html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+			}
+			cb(moment().subtract(29, 'days'), moment());
+
+			$(".reportrange").daterangepicker({
+				"buttonClasses": "button button-rounded button-mini nomargin",
+				"applyClass": "button-color",
+				"cancelClass": "button-light",
+				ranges: {
+				   'Today': [moment(), moment()],
+				   'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+				   'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+				   'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+				   'This Month': [moment().startOf('month'), moment().endOf('month')],
+				   'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+				}
+			}, cb);
+
+			// .daterange4
+			$(".daterange4").daterangepicker({
+				autoUpdateInput: false,
+				locale: {
+					cancelLabel: 'Clear'
+				},
+				"buttonClasses": "button button-rounded button-mini nomargin",
+				"applyClass": "button-color",
+				"cancelClass": "button-light"
+			});
+
+			$(".daterange4").on('apply.daterangepicker', function(ev, picker) {
+				$(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+			});
+
+			$(".daterange4").on('cancel.daterangepicker', function(ev, picker) {
+				$(this).val('');
+			});
+
+		});
+
+	</script>
+	
+	<script>
+	// Script bouton radio
+		jQuery(".bt-switch").bootstrapSwitch();
+
+	</script>
 
 	<?php
     if ($pg=="contact") {
