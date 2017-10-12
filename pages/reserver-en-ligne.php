@@ -31,55 +31,51 @@
 				
 				<!-- Postcontent
 					============================================= -->
-					<div class=" bottommargin">
+					<div class="contact-widget bottommargin">
 						
+						<div class="contact-form-result"></div>
+					
 					<form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail-resa.php" method="post">
 
+						<div class="form-process"></div>
 
 						<h3><?php echo $titrep; ?></h3>
 						
 						<p><?php echo $textep; ?></p>
 						
-						
-
 						<div class="col_half contact-widget">
 							
 							<div class="fancy-title title-bottom-border">
 								<h4>Vos informations</h4>
 							</div>
 
-							<div class="contact-form-result"></div>
-
-								<div class="form-process"></div>
-
 								<div class="col_one_third">
-									<label for="template-contactform-name">Nom <small>*</small></label>
+									<label for="visiteur_nom">Nom <small>*</small></label>
 									<input type="text" id="visiteur_nom" name="visiteur_nom" value="" class="sm-form-control required" />
 								</div>
 
 								<div class="col_one_third ">
-									<label for="template-contactform-phone">Prénom</label>
+									<label for="visiteur_prenom">Prénom</label>
 									<input type="text" id="visiteur_prenom" name="visiteur_prenom" value="" class="sm-form-control" />
 								</div>
 								
 								<div class="col_one_third col_last">
-									<label for="template-contactform-email">Email <small>*</small></label>
+									<label for="visiteur_email">Email <small>*</small></label>
 									<input type="email" id="visiteur_email" name="visiteur_email" value="" class="required email sm-form-control" />
 								</div>
 
 								<div class="clear"></div>
 
 								<div class="col_half">
-									<label for="template-contactform-subject">Téléphone <small>*</small></label>
+									<label for="visiteur_tel">Téléphone <small>*</small></label>
 									<input type="text" id="visiteur_tel" name="visiteur_tel" value="" class="required sm-form-control" />
 								</div>
 								<div class="col_half col_last">
-									<label for="template-contactform-subject">Entreprise ou établissement</label>
+									<label for="visiteur_entreprise">Entreprise ou établissement</label>
 									<input type="text" id="visiteur_entreprise" name="visiteur_entreprise" value="" class=" sm-form-control" />
 								</div>
 
 								<div class="clear"></div>
-
 						</div>
 						
 						<div class="col_half col_last contact-widget">
@@ -88,21 +84,17 @@
 								<h4>La personne à transporter</h4>
 							</div>
 
-							<div class="contact-form-result"></div>
-
-							<div class="form-process"></div>
-
 								<div class="col_half">
 									<label for="transp_nom">Nom <small>*</small></label>
 									<input type="text" id="transp_nom" name="transp_nom" value="" class="sm-form-control required" />
 								</div>
 
 								<div class="col_half col_last">
-									<label for="transp_email">Prénom</label>
-									<input type="text" id="transp_email" name="transp_email" value="" class="sm-form-control" />
+									<label for="transp_prenom">Prénom</label>
+									<input type="text" id="transp_prenom" name="transp_prenom" value="" class="sm-form-control" />
 								</div>
 
-								<div class="col_full">
+								<div class="col_full travel-date-group">
 									<label for="transp_datenaissance">Date de naissance</label>
 									<div class="input-group">
 									<input type="text" id="transp_datenaissance" name="transp_datenaissance" value="" class="sm-form-control tleft past-enabled" placeholder="JJ/MM/AAAA" />
@@ -117,38 +109,27 @@
 						</div>
 						<div class="clear"></div>
 						
-						<div class="col_full contact-widget">
+						<div class="col_full contact-widget travel-date-group">
 							
 							<div class="fancy-title title-bottom-border">
 								<h4>Votre réservation</h4>
 							</div>
 
-							<div class="contact-form-result"></div>
-
-								<div class="form-process"></div>
-								
 								<div class="col_half">
 									<label for="res_type">Type de transport <small>*</small></label>
 									<select class="select-1 form-control" name="res_type" id="res_type">
-											<option value="AZ">Arizona</option>
-											<option value="CO">Colorado</option>
-											<option value="ID">Idaho</option>
-											<option value="MT">Montana</option>
-											<option value="NE">Nebraska</option>
-											<option value="NM">New Mexico</option>
-											<option value="ND">North Dakota</option>
-											<option value="UT">Utah</option>
-											<option value="WY">Wyoming</option>
+											<option value="Personne valide">Personne valide</option>
+											<option value="Personne avec sa propre chaise roulante">Personne avec sa propre chaise roulante</option>
+											<option value="Personne en chaise roulante  + apporter une chaise roulante">Personne en chaise roulante  + apporter une chaise roulante</option>
+											<option value="Personne couchée">Personne couchée</option>
 									</select>
-									
 								</div>
 
 								<div class="col_half col_last">
 									<label for="res_choix">Choix <small>*</small></label>
 									<select class="select-1 form-control" name="res_choix" id="res_choix">
-											<option value="AZ">Arizona</option>
-											<option value="CO">Colorado</option>
-											<option value="ID">Idaho</option>
+											<option value="Aller simple">Aller simple</option>
+											<option value="Aller / retour">Aller / retour</option>
 									</select>
 								</div>
 								
@@ -202,8 +183,6 @@
 											<i class="icon-calendar2"></i>
 										</span>
 									</div>
-									
-									
 								</div>
 								<div class="col_half col_last"></div>
 								
@@ -226,12 +205,12 @@
 								</div>
 
 								<div class="col_full">
-										<input id="checkbox-10" class="checkbox-style" name="check_cgv" type="checkbox" >
-										<label for="check_cgv" class="checkbox-style-3-label">J'ai lu et j'accepte les <a href="/images/cgv.pdf" title="Conditions générales de vente">Conditions générales de vente</a></label>
+										<input id="check_cgv" class="checkbox-style" name="check_cgv" type="checkbox" >
+										<label for="check_cgv" class="checkbox-style-3-label">J'ai lu et j'accepte les <a href="/images/cgv.pdf" target="_blank" title="Conditions générales de vente">Conditions générales de vente</a></label>
 								</div>
-
+								
 								<div class="col_full">
-									<button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Envoyer</button>
+									<button class="button button-3d nomargin" type="submit" id="submit" name="submit" value="submit">Envoyer</button>
 								</div>
 								
 								
