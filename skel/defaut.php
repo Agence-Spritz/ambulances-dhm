@@ -4,6 +4,10 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<?php include ("inc/meta.php"); ?>
+	
+	<?php 
+		setlocale(LC_TIME, 'fr','fr_FR','fr_FR@euro','fr_FR.utf8','fr-FR','fra');
+		?>
 
 	<!-- Stylesheets
 	============================================= -->
@@ -512,6 +516,9 @@
 			});
 			$('.travel-date-group .format').datepicker({
 				autoclose: true,
+				locale: {
+					format: 'DD/MM/YYYY'
+				},
 				format: "dd-mm-yyyy",
 			});
 
@@ -550,7 +557,8 @@
 
 			$('.datetimepicker1').datetimepicker({
 				format: 'LT',
-				showClose: true
+				showClose: false,
+				
 			});
 
 			$('.datetimepicker2').datetimepicker({
