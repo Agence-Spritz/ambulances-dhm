@@ -363,9 +363,31 @@
  
       };
       date_input.datepicker(options);
+      
+      var date_input_2=$('.dateinput_2'); //our date input has the class "dateinput"
+      
+      var options={
+	      format: 'dd/mm/yyyy',
+        todayHighlight: true,
+        autoclose: true,
+    weekStart: 1,
+    orientation: "top",
+    language: 'fr',
+        startDate: '+1d'
+ 
+      };
+      date_input_2.datepicker(options);
+      
+      
+      
     })
 </script>
 
+<script>
+$('.choix').datepicker({
+    startDate: '+1d'
+})
+</script>
 
 	
 	<?php
