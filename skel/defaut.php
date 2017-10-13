@@ -350,7 +350,7 @@
 </script>
 
 <script>
-    $(document).ready(function(){
+	  // On cible les champs ayant la classe dateinput
       var date_input=$('.dateinput'); //our date input has the class "dateinput"
       
       var options={
@@ -364,6 +364,7 @@
       };
       date_input.datepicker(options);
       
+       // On cible les champs ayant la classe dateinput_2
       var date_input_2=$('.dateinput_2'); //our date input has the class "dateinput_2"
       
       var options={
@@ -377,17 +378,9 @@
  
       };
       date_input_2.datepicker(options);
-      
-      
-      
-    })
+    
 </script>
 
-<script>
-$('.choix').datepicker({
-    startDate: '+1d'
-})
-</script>
 
 	
 	<?php
