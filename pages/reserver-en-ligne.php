@@ -93,11 +93,11 @@
 									<label for="transp_prenom">Prénom</label>
 									<input type="text" id="transp_prenom" name="transp_prenom" value="" class="sm-form-control" />
 								</div>
-
-								<div class="col_full travel-date-group">
+								
+								<div class="col_full default travel-date-group">
 									<label for="transp_datenaissance">Date de naissance</label>
 									<div class="input-group">
-									<input type="text" id="transp_datenaissance" name="transp_datenaissance" value="" class="sm-form-control tleft past-enabled" placeholder="JJ/MM/AAAA" />
+									<input type="text" id="transp_datenaissance" name="transp_datenaissance" value="" class="dateinput sm-form-control tleft past-enabled" placeholder="JJ/MM/AAAA" />
 										<span class="input-group-addon" style="padding: 9px 12px;">
 											<i class="icon-calendar2"></i>
 										</span>
@@ -152,7 +152,7 @@
 									
 									<label for="res_date_depart_retour">Date de départ <small>*</small></label>
 									<div class="input-group">
-									<input type="text" id="res_date_depart_retour" name="res_date_depart_retour" value="" class="required sm-form-control tleft past-enabled" placeholder="JJ/MM/AAAA" />
+									<input type="text" id="res_date_depart_retour" name="res_date_depart_retour" value="" class="dateinput required sm-form-control tleft past-enabled" placeholder="JJ/MM/AAAA" />
 										<span class="input-group-addon" style="padding: 9px 12px;">
 											<i class="icon-calendar2"></i>
 										</span>
@@ -178,7 +178,7 @@
 								<div class="col_half">
 									<label for="res_date_depart_aller">Date de départ <small>*</small></label>
 									<div class="input-group">
-									<input type="text" id="res_date_depart_aller" name="res_date_depart_aller" value="" class="sm-form-control required tleft past-enabled" placeholder="JJ/MM/AAAA" />
+									<input type="text" id="res_date_depart_aller" name="res_date_depart_aller" value="" class="dateinput sm-form-control required tleft past-enabled" placeholder="JJ/MM/AAAA" />
 										<span class="input-group-addon" style="padding: 9px 12px;">
 											<i class="icon-calendar2"></i>
 										</span>

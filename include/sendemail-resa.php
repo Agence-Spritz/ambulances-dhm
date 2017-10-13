@@ -80,6 +80,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 		if( $botcheck == 'on' ) {
 
+			// Mail à destination de l'admin
 			$mail->SetFrom( $visiteur_email , utf8_decode($visiteur_nom) );
 			$mail->AddReplyTo( $visiteur_email , $visiteur_nom );
 			foreach( $toemails as $toemail ) {
@@ -152,6 +153,30 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 					$body=preg_replace('/"/',"``",trim($body)); 
 					mysqli_query($link, "INSERT INTO ".$table_prefix."_contact ( `ID` , `nom` , `dbu` , `message` )
 					VALUES (NULL , '$visiteur_nom - $visiteur_email', '$dbu', '$subject\n\n$body\n\nCet email a été expédié à : $to Par $IP_exp') ");
+					
+					
+					// On envoie un mail de confirmation au client
+					
+					$nom_expediteur_admin = ""; 
+					
+					$mail->SetFrom( $mail1 , utf8_decode($nom_expediteur_admin) );
+					$mail->AddReplyTo( $mail1 , $nom_expediteur_admin );
+					
+					$mail->AddAddress( $visiteur_email , $visiteur_nom );
+					
+					$mail->Subject = utf8_decode("Votre réservation d'ambulance");
+		
+					$message_confirm = "<h3>Confirmation de réception</h3><br /><br />";
+					$message_confirm .= "Nous vous confirmons la bonne réception de votre demande de réservation auprès des Ambulances DHM<br />";
+					$message_confirm .= "Votre demande sera traitée dans les meilleurs délais. <br /><br />";
+					$message_confirm .= "L'équipe DHM<br />";
+					
+					
+					$body = utf8_decode("$message_confirm");
+					$mail->MsgHTML( $body );
+					$sendEmail = $mail->Send();
+					
+				
 			else:
 			
 			echo '{ "alert": "error", "message": "<strong>Erreur</strong>. Merci de nous appeler<br /><br /><strong>Erreur suivante:</strong><br />' . $mail->ErrorInfo . '" }';

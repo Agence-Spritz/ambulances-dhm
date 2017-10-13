@@ -323,17 +323,50 @@
 
 	<!-- Select-Splitter Plugin -->
 	<script type="text/javascript" src="js/components/selectsplitter.js"></script>
-	
-	<!-- Date & Time Picker JS -->
-	<script type="text/javascript" src="js/components/moment.js"></script>
-	<script type="text/javascript" src="demos/travel/js/datepicker.js"></script>
-	<script type="text/javascript" src="js/components/timepicker.js"></script>
 
-	<!-- Include Date Range Picker -->
-	<script type="text/javascript" src="js/components/daterangepicker.js"></script>
 	
 	<!-- Bootstrap Switch Plugin -->
 	<script type="text/javascript" src="js/components/bs-switches.js"></script>
+	
+	<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+<script>
+;(function($){
+	$.fn.datepicker.dates['fr'] = {
+		days: ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"],
+		daysShort: ["dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."],
+		daysMin: ["d", "l", "ma", "me", "j", "v", "s"],
+		months: ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
+		monthsShort: ["janv.", "févr.", "mars", "avril", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."],
+		today: "Aujourd'hui",
+		monthsTitle: "Mois",
+		clear: "Effacer",
+		weekStart: 1,
+		format: "dd/mm/yyyy"
+	};
+}(jQuery));
+</script>
+
+<script>
+    $(document).ready(function(){
+      var date_input=$('.dateinput'); //our date input has the class "dateinput"
+      
+      var options={
+        format: 'dd/mm/yyyy',
+        todayHighlight: true,
+        autoclose: true,
+    weekStart: 1,
+    orientation: "top",
+    language: 'fr'
+ 
+      };
+      date_input.datepicker(options);
+    })
+</script>
+
+
 	
 	<?php
     if ($pg=="contact") {
@@ -498,149 +531,8 @@
 	</script><!-- END REVOLUTION SLIDER -->
     <?php } ?>
     
-    <script type="text/javascript">
-		$(function() {
-			$('.travel-date-group .default').datepicker({
-				autoclose: true,
-				startDate: "today",
-			});
 
-			$('.travel-date-group .today').datepicker({
-				autoclose: true,
-				startDate: "today",
-				todayHighlight: true
-			});
-
-			$('.travel-date-group .past-enabled').datepicker({
-				autoclose: true,
-			});
-			$('.travel-date-group .format').datepicker({
-				autoclose: true,
-				locale: {
-					format: 'DD/MM/YYYY'
-				},
-				format: "dd-mm-yyyy",
-			});
-
-			$('.travel-date-group .autoclose').datepicker();
-
-			$('.travel-date-group .disabled-week').datepicker({
-				autoclose: true,
-				daysOfWeekDisabled: "0"
-			});
-
-			$('.travel-date-group .highlighted-week').datepicker({
-				autoclose: true,
-				daysOfWeekHighlighted: "0"
-			});
-
-			$('.travel-date-group .mnth').datepicker({
-				autoclose: true,
-				minViewMode: 1,
-				format: "mm/yy"
-			});
-
-			$('.travel-date-group .multidate').datepicker({
-				multidate: true,
-				multidateSeparator: " , "
-			});
-
-			$('.travel-date-group .input-daterange').datepicker({
-				autoclose: true
-			});
-
-			$('.travel-date-group .inline-calendar').datepicker();
-
-			$('.datetimepicker').datetimepicker({
-				showClose: true
-			});
-
-			$('.datetimepicker1').datetimepicker({
-				format: 'LT',
-				showClose: false,
-				
-			});
-
-			$('.datetimepicker2').datetimepicker({
-				inline: true,
-				sideBySide: true
-			});
-
-		});
-
-		$(function() {
-			// .daterange1
-			$(".daterange1").daterangepicker({
-				"buttonClasses": "button button-rounded button-mini nomargin",
-				"applyClass": "button-color",
-				"cancelClass": "button-light"
-			});
-
-			// .daterange2
-			$(".daterange2").daterangepicker({
-				"opens": "center",
-				timePicker: true,
-				timePickerIncrement: 30,
-				locale: {
-					format: 'DD/MM/YYYY h:mm A'
-				},
-				"buttonClasses": "button button-rounded button-mini nomargin",
-				"applyClass": "button-color",
-				"cancelClass": "button-light"
-			});
-
-			// .daterange3
-			$(".daterange3").daterangepicker({
-				singleDatePicker: true,
-				showDropdowns: true
-			},
-			function(start, end, label) {
-				var years = moment().diff(start, 'years');
-				alert("You are " + years + " years old.");
-			});
-
-			// reportrange
-			function cb(start, end) {
-				$(".reportrange span").html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-			}
-			cb(moment().subtract(29, 'days'), moment());
-
-			$(".reportrange").daterangepicker({
-				"buttonClasses": "button button-rounded button-mini nomargin",
-				"applyClass": "button-color",
-				"cancelClass": "button-light",
-				ranges: {
-				   'Today': [moment(), moment()],
-				   'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-				   'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-				   'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-				   'This Month': [moment().startOf('month'), moment().endOf('month')],
-				   'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-				}
-			}, cb);
-
-			// .daterange4
-			$(".daterange4").daterangepicker({
-				autoUpdateInput: false,
-				locale: {
-					cancelLabel: 'Clear'
-				},
-				"buttonClasses": "button button-rounded button-mini nomargin",
-				"applyClass": "button-color",
-				"cancelClass": "button-light"
-			});
-
-			$(".daterange4").on('apply.daterangepicker', function(ev, picker) {
-				$(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
-			});
-
-			$(".daterange4").on('cancel.daterangepicker', function(ev, picker) {
-				$(this).val('');
-			});
-
-		});
-
-	</script>
+	
 	
 	<script type="text/javascript">
 		
@@ -688,17 +580,10 @@
 		});
 	</script>
 	
-	
-	
 	<script>
 	// Script bouton radio
 		jQuery(".bt-switch").bootstrapSwitch();
-
 	</script>
-
-	
-    
-
 
 </body>
 </html>
