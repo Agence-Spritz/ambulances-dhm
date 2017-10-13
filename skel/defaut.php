@@ -364,7 +364,7 @@
       };
       date_input.datepicker(options);
       
-      var date_input_2=$('.dateinput_2'); //our date input has the class "dateinput"
+      var date_input_2=$('.dateinput_2'); //our date input has the class "dateinput_2"
       
       var options={
 	      format: 'dd/mm/yyyy',
