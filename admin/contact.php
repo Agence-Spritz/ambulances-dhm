@@ -132,10 +132,13 @@ if ( $modif )
 						    <div class="col-sm-12 col-md-12 texte-principal">
 					    
 						      <h4><i class='fa fa-align-justify '></i> Message</h4>
-						      <textarea name="<?=$chps[3]?>" row contenu-admins="10" cols="50" ><?=$$chps[3]?></textarea><script type="text/javascript">CKEDITOR.replace( '<?=$chps[4]?>' );</script>
+						      <div style=""><?php echo utf8_encode($$chps[3]); ?></div>
+<!-- 						      <textarea name="<?=$chps[3]?>" row contenu-admins="10" cols="50" ><?=$$chps[3]?></textarea><script type="text/javascript">CKEDITOR.replace( '<?=$chps[4]?>' );</script> -->
 						      <div class="clearfix"></div>
+<!--
 						      <button type="submit" name="Submit" value="Enregistrer" class="btn btn-default bouton-submit">Enregistrer</button>
 						      
+-->
 							</div>
 
 				</form>
@@ -158,7 +161,7 @@ if ( $modif )
 						  	<div class="input-group">
 						      <input type="text" class="form-control" placeholder="Rechercher..." name="word" value="<?php print(htmlentities($word)); ?>">
 						      <span class="input-group-btn">
-						        <button class="btn btn-default" type="button">OK</button>
+						        <button class="btn btn-default" type="submit">OK</button>
 						      </span>
 						    </div><!-- /input-group -->
 		

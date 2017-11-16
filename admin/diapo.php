@@ -226,7 +226,7 @@ if ( $modif )
 					  	<div class="input-group">
 					      <input type="text" class="form-control" placeholder="Rechercher..." name="word" value="<?php print(htmlentities($word)); ?>">
 					      <span class="input-group-btn">
-					        <button class="btn btn-default" type="button">OK</button>
+					        <button class="btn btn-default" type="submit">OK</button>
 					      </span>
 					    </div><!-- /input-group -->
 	
