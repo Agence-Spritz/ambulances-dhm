@@ -98,7 +98,7 @@
 			-->
 			<div class="tp-banner-container">
             	<!-- Logo slide  -->
-                <div style="position: absolute; margin:30px 0 0 10px; width:100%; z-index:9999">
+                <div class="logo-wrapper">
                 	<a href="<?php echo $defaultpg; ?>.php">
                     	<img src="images/logo1.png" style="">
                     </a>

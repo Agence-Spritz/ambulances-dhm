@@ -999,6 +999,9 @@ body.stretched #header.full-header .container {
 	Logo
 -----------------------------------------------------------------*/
 
+.logo-wrapper {
+	position: absolute; margin:30px 0 0 10px; width:100%; z-index:9999
+}
 
 #logo {
 	position: relative;
@@ -13605,4 +13608,8 @@ color: #fff !important;
     border: none !important;
     color: #444;
     font-size: 14px
+}
+
+.a-votre-service {
+	height: 500px;
 }

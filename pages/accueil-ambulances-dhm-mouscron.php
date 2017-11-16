@@ -87,7 +87,7 @@
             
 		</div>
 		
-		<div class="section dark topmargin-lg" style="height: 500px;">
+		<div class="section dark topmargin-lg a-votre-service">
 			<div class="container center clearfix vertical-middle">
 				
 				<div class="slider-caption slider-caption-center">
@@ -97,7 +97,7 @@
 				<div class="col_one_fourth nobottommargin">
 					<div class="feature-box fbox-center fbox-plain nobottomborder">
 							<div class="fbox-icon">
-								<a href="#"><img src="images/icons/service-1.png" alt="Icon" data-animate="zoomIn"></a>
+								<a href="prise-en-charge-transport-medicalise--4--prise-en-charge"><img src="images/icons/service-1.png" alt="Icon" data-animate="zoomIn"></a>
 							</div>
 						<p>Pour les transports urgents de soins intensifs et de réanimation, cette cellule médicalisée est capable d’accueillir toute une équipe médicale (médecin, infirmiers, ambulanciers supplémentaires).</p>
 					</div>
@@ -106,7 +106,7 @@
 				<div class="col_one_fourth nobottommargin">
 					<div class="feature-box fbox-center fbox-plain nobottomborder">
 							<div class="fbox-icon">
-								<a href="#"><img src="images/icons/service-2.png" alt="Icon" data-animate="zoomIn" data-delay="200"></a>
+								<a href="prise-en-charge-transport-non-medicalise--5--prise-en-charge"><img src="images/icons/service-2.png" alt="Icon" data-animate="zoomIn" data-delay="200"></a>
 							</div>
 						<p>Ce service d’ambulance assure les transports non urgents pour personnes nécessitant un brancard.</p>
 					</div>
@@ -115,7 +115,7 @@
 				<div class="col_one_fourth nobottommargin">
 					<div class="feature-box fbox-center fbox-plain nobottomborder">
 							<div class="fbox-icon">
-								<a href="#"><img src="images/icons/service-3.png" alt="Icon" data-animate="zoomIn" data-delay="400"></a>
+								<a href="prise-en-charge-transport-vsl--6--prise-en-charge"><img src="images/icons/service-3.png" alt="Icon" data-animate="zoomIn" data-delay="400"></a>
 							</div>
 						<p>Ce type de transport permet aux personnes valides ou à mobilité réduite de se déplacer selon leurs besoins grâce à des véhicules adaptés.</p>
 					</div>
@@ -124,7 +124,7 @@
 				<div class="col_one_fourth nobottommargin col_last">
 					<div class="feature-box fbox-center fbox-plain nobottomborder">
 							<div class="fbox-icon">
-								<a href="#"><img src="images/icons/service-4.png" alt="Icon" data-animate="zoomIn" data-delay="600"></a>
+								<a href="prise-en-charge-hospitalisation-mouscron--136--prise-en-charge"><img src="images/icons/service-4.png" alt="Icon" data-animate="zoomIn" data-delay="600"></a>
 							</div>
 						<p>En cas d’hospitalisation, la demande de transport peut être faite directement en nous contactant par téléphone.</p>
 					</div>
