@@ -1,11 +1,9 @@
 AuthUserFile /home/www/ambulancesdhm.be/admin/.htpasswd
 
 AuthGroupFile /dev/null
-
 AuthName "Acces Restreint"
-
 AuthType Basic
-#<Limit GET POST>
+<Limit GET POST>
 require user sullymaz admin
 </Limit>
 
