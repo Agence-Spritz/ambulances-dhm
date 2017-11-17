@@ -1,10 +1,13 @@
-#AuthUserFile /home/www/ambulancesdhm.be/admin/.htpasswd
-#AuthGroupFile /dev/null
-#AuthName "Acces Restreint"
-#AuthType Basic
+AuthUserFile /home/www/ambulancesdhm.be/admin/.htpasswd
+
+AuthGroupFile /dev/null
+
+AuthName "Acces Restreint"
+
+AuthType Basic
 #<Limit GET POST>
-#require user sullymaz admin
-#</Limit>
+require user sullymaz admin
+</Limit>
 
 DirectoryIndex page.php
 
