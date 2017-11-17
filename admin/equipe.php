@@ -304,9 +304,9 @@ if ( $modif )
 						  while ( list($ID,$page,$titre,$texte,$dbu,$masquer,$lg,$rub, $texte2) = mysqli_fetch_array($result) )
 						  {
 						  	if ($masquer=="1") {$class="normalgrisclair";} else {$class="";}
-						    echo "<tr>"; <!-- class='".$class."'-->
+						    echo "<tr class='".$class."'>";
 						    echo "<td><a href=\"?modif=$ID&word=$word\"><i class='fa fa-pencil '></i></a></td>";
-						    echo "<td>$ID - $lg</td><td>".$page." <i class='fa fa-angle-right '></i>".$rub."</td><td>".strip_tags($titre)."</td><td>".substr(strip_tags($texte2),0,60)."...</td><td>".date_barre($dbu)."</td><td><a href=\"?del=$ID&word=$word\"><i class='fa fa-trash-o '></i></a></td>";
+						    echo "<td >$ID - $lg</td><td>".$page." <i class='fa fa-angle-right '></i>".$rub."</td><td>".strip_tags($titre)."</td><td>".substr(strip_tags($texte2),0,60)."...</td><td>".date_barre($dbu)."</td><td><a href=\"?del=$ID&word=$word\"><i class='fa fa-trash-o '></i></a></td>";
 						    echo "</tr>";
 						  }
 						 ?>
