@@ -54,10 +54,12 @@
 					<div class="row">
 						
 						<?php $req = mysqli_query($link,"SELECT ID, titre, dbu, rub, texte, texte2 FROM ".$table_prefix."_pages WHERE page='equipe' AND rub = 'Ambulanciers' AND masquer <> '1' ORDER BY ID ASC "); 
-						 	while ($data = mysqli_fetch_array($req)) {
+						 	$n=0;
+							while ($data = mysqli_fetch_array($req)) {
+								$n++;
 				  		?>
 
-						<div class="col-md-3 col-sm-6 bottommargin">
+						<div class="col-md-3 col-sm-6 bottommargin" <?=($n==5)?('style="clear:both"'):('')?>>
 
 							<div class="team">
 								<div class="team-image">
@@ -90,10 +92,12 @@
 					<div class="row">
 						
 						<?php $req = mysqli_query($link,"SELECT ID, titre, dbu, rub, texte, texte2 FROM ".$table_prefix."_pages WHERE page='equipe' AND rub = 'Nursing' AND masquer <> '1' ORDER BY ID ASC "); 
-						 	while ($data = mysqli_fetch_array($req)) {
+						 	$n=0;
+							while ($data = mysqli_fetch_array($req)) {
+								$n++;
 				  		?>
 
-						<div class="col-md-3 col-sm-6 bottommargin">
+						<div class="col-md-3 col-sm-6 bottommargin" <?=($n==5)?('style="clear:both"'):('')?>>
 
 							<div class="team">
 								<div class="team-image">
@@ -127,10 +131,12 @@
 					<div class="row">
 						
 						<?php $req = mysqli_query($link,"SELECT ID, titre, dbu, rub, texte, texte2 FROM ".$table_prefix."_pages WHERE page='equipe' AND rub = 'Administrative' AND masquer <> '1' ORDER BY ID ASC "); 
-						 	while ($data = mysqli_fetch_array($req)) {
+						 	$n=0;
+							while ($data = mysqli_fetch_array($req)) {
+								$n++;
 				  		?>
 
-						<div class="col-md-3 col-sm-6 bottommargin">
+						<div class="col-md-3 col-sm-6 bottommargin" <?=($n==5)?('style="clear:both"'):('')?>>
 
 							<div class="team">
 								<div class="team-image">
