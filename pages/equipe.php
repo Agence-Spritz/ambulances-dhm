@@ -130,7 +130,7 @@
 
 					<div class="row">
 						
-						<?php $req = mysqli_query($link,"SELECT ID, titre, dbu, rub, texte, texte2 FROM ".$table_prefix."_pages WHERE page='equipe' AND rub = 'Administrative' AND masquer <> '1' ORDER BY ID ASC "); 
+						<?php $req = mysqli_query($link,"SELECT ID, titre, dbu, rub, texte, texte2 FROM ".$table_prefix."_pages WHERE page='equipe' AND rub = 'Administratif' AND masquer <> '1' ORDER BY ID ASC "); 
 						 	$n=0;
 							while ($data = mysqli_fetch_array($req)) {
 								$n++;
